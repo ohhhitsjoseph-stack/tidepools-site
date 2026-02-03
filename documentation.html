@@ -353,52 +353,95 @@
         </div>
       </section>
 
-      <section class="feature-grid" id="docs" aria-labelledby="docs-heading">
-        <h2 id="docs-heading" class="sr-only">Documentation Categories</h2>
-
-        <div class="feature-card">
-          <h3>Getting Started</h3>
-          <p>Quick start guide to set up your first analysis. Learn how to create an account, upload your first FASTQ files, and run your first biodiversity analysis in under 15 minutes.</p>
-          <a href="#getting-started">Read more →</a>
-        </div>
-
-        <div class="feature-card">
-          <h3>User Guide</h3>
-          <p>Full platform walkthrough covering all features and capabilities. Explore the analysis interface, customize primers, configure quality thresholds, and manage your biodiversity projects.</p>
-          <a href="#user-guide">Read more →</a>
-        </div>
-
-        <div class="feature-card">
-          <h3>Data Formats</h3>
-          <p>Detailed information about supported file formats and requirements. Learn about FASTQ specifications, primer compatibility (COI, 12S, 18S), multiplexing options, and file organization best practices.</p>
-          <a href="#data-formats">Read more →</a>
-        </div>
-
-        <div class="feature-card">
-          <h3>Interpreting Results</h3>
-          <p>Understanding your analysis results. Learn how confidence scores are calculated, what taxonomic assignments mean, how to evaluate detection reliability, and how to use results for conservation decisions.</p>
-          <a href="#interpreting-results">Read more →</a>
-        </div>
-
-        <div class="feature-card">
-          <h3>Integrations</h3>
-          <p>Connect Oceara with your existing tools and workflows. Access our REST API, export data in multiple formats, integrate with GIS systems, and automate your biodiversity monitoring pipeline.</p>
-          <a href="#integrations">Read more →</a>
-        </div>
-
-        <div class="feature-card">
-          <h3>Troubleshooting</h3>
-          <p>Solutions to common issues and questions. Find answers about file validation errors, low confidence results, API rate limits, account management, and how to contact our support team.</p>
-          <a href="#troubleshooting">Read more →</a>
+      <section id="quickstart">
+        <div class="glass-card">
+          <h2>Quickstart</h2>
+          <ol style="color: var(--muted); line-height: 1.8; padding-left: 22px;">
+            <li>Create an Oceara account and sign in.</li>
+            <li>Upload FASTQ files (paired-end R1/R2 or single-end).</li>
+            <li>Enter sample metadata like location, collection date, and primer.</li>
+            <li>Start analysis and monitor progress in your dashboard.</li>
+            <li>Review species results, AI interpretation, and the printable report.</li>
+          </ol>
         </div>
       </section>
 
-      <section class="cta-banner">
-        <div>
-          <h2>Need Help?</h2>
-          <p>Can't find what you're looking for? Reach out to our support team or join our community forum to connect with other Oceara users.</p>
+      <section id="file-requirements">
+        <div class="glass-card">
+          <h2>File Requirements</h2>
+          <ul style="color: var(--muted); line-height: 1.8; padding-left: 22px;">
+            <li>Accepted formats: .fastq, .fastq.gz, .fq, .fq.gz.</li>
+            <li>Paired-end data should include both R1 and R2 reads.</li>
+            <li>Single-end data should be labeled clearly (for example, sample_R1).</li>
+            <li>Maximum file size: 2GB per file.</li>
+          </ul>
         </div>
-        <button class="btn primary">Contact Support</button>
+      </section>
+
+      <section id="required-metadata">
+        <div class="glass-card">
+          <h2>Required Metadata</h2>
+          <ul style="color: var(--muted); line-height: 1.8; padding-left: 22px;">
+            <li>Sample name and collection date.</li>
+            <li>Collection location (coordinates or region).</li>
+            <li>Environment type and primer/marker selection.</li>
+            <li>Optional site name and collection method.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="optional-enhancements">
+        <div class="glass-card">
+          <h2>Optional Enhancements</h2>
+          <ul style="color: var(--muted); line-height: 1.8; padding-left: 22px;">
+            <li>Region polygons for spatial summaries.</li>
+            <li>Custom reference databases (pilot only).</li>
+            <li>Team tags for dashboards and reports.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="pipeline-stages">
+        <div class="glass-card">
+          <h2>Pipeline Stages</h2>
+          <ul style="color: var(--muted); line-height: 1.8; padding-left: 22px;">
+            <li>Quality control and primer trimming.</li>
+            <li>Denoising and contaminant removal.</li>
+            <li>Taxonomy assignment and consensus building.</li>
+            <li>Plausibility checks and expert review flags.</li>
+            <li>Discovery detection and AI interpretation.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="understanding-results">
+        <div class="glass-card">
+          <h2>Understanding Results</h2>
+          <ul style="color: var(--muted); line-height: 1.8; padding-left: 22px;">
+            <li>Confidence scores indicate how strongly reads match references.</li>
+            <li>Discovery flags highlight taxa not previously seen at the location.</li>
+            <li>AI summaries translate outputs into plain-language insights.</li>
+            <li>Live status indicators show progress as runs complete.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="reports-and-sharing">
+        <div class="glass-card">
+          <h2>Reports and Sharing</h2>
+          <ul style="color: var(--muted); line-height: 1.8; padding-left: 22px;">
+            <li>Printable report view for field teams and stakeholders.</li>
+            <li>Sample chat to ask questions about results.</li>
+            <li>Dashboard status tracking for every sample.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="need-help">
+        <div class="glass-card">
+          <h2>Need Help?</h2>
+          <p style="color: var(--muted); line-height: 1.8;">Reach out to the Oceara team at <a href="mailto:hello@oceara.io" style="color: var(--ocean-blue); font-weight: 600;">hello@oceara.io</a> or visit the contact page.</p>
+        </div>
       </section>
     </main>
 

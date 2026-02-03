@@ -297,6 +297,7 @@
         <div>
           <p class="kicker">Enterprise-grade protection for your eDNA data</p>
           <h1>Security & Compliance</h1>
+          <p style="font-size: 0.9rem; color: var(--slate); margin: 12px 0 0;">Last updated: February 3, 2026</p>
           <p class="hero-subtitle">
             Your data security is our top priority. Oceara implements industry-leading encryption, compliance frameworks, and infrastructure practices to protect your environmental DNA data and research insights.
           </p>
@@ -308,100 +309,63 @@
       </section>
 
       <section class="feature-grid" id="security-features" aria-labelledby="security-heading">
-        <h2 id="security-heading" class="sr-only">Security & Compliance Features</h2>
-        <div class="feature-card">
-          <h3>Data Encryption</h3>
-          <p>All eDNA data is encrypted end-to-end using AES-256 encryption standards. Data in transit is protected with TLS 1.3 encryption, ensuring your sequences and biodiversity results remain confidential throughout processing and storage.</p>
-          <div class="pill-row">
-            <span>AES-256 encryption</span>
-            <span>TLS 1.3</span>
-            <span>FIPS 140-2</span>
-          </div>
+        <h2 id="security-heading" class="sr-only">Core Security Pillars</h2>
+        <div class="glass-card">
+          <h3 style="margin-top: 0;">Access Control</h3>
+          <p style="color: var(--slate); line-height: 1.6; margin: 12px 0 0;">Role-based access, private storage buckets, and strict authentication help ensure only approved users can reach data.</p>
         </div>
-        <div class="feature-card">
-          <h3>Access Controls</h3>
-          <p>Role-based access control (RBAC) ensures only authorized team members can view or modify data. Single Sign-On (SSO) integration with enterprise identity providers and multi-factor authentication (2FA) provide additional security layers for your laboratory.</p>
-          <div class="pill-row">
-            <span>Role-based access</span>
-            <span>SSO integration</span>
-            <span>Multi-factor auth</span>
-          </div>
+        <div class="glass-card">
+          <h3 style="margin-top: 0;">Encryption</h3>
+          <p style="color: var(--slate); line-height: 1.6; margin: 12px 0 0;">Data is protected in transit via TLS and stored using encryption at rest provided by our infrastructure partners.</p>
         </div>
-        <div class="feature-card">
-          <h3>Compliance Certifications</h3>
-          <p>Oceara maintains SOC 2 Type II certification for security, availability, and confidentiality. We comply with GDPR data protection regulations and maintain audit trails for all data access and modifications to support regulatory requirements.</p>
-          <div class="pill-row">
-            <span>SOC 2 Type II</span>
-            <span>GDPR compliant</span>
-            <span>Audit trails</span>
-          </div>
-        </div>
-        <div class="feature-card">
-          <h3>Infrastructure & Backups</h3>
-          <p>Our platform runs on AWS with enterprise-grade infrastructure. Redundant backups across multiple geographic regions ensure your eDNA data is always protected. Automated disaster recovery and 99.99% uptime SLA guarantee continuous availability.</p>
-          <div class="pill-row">
-            <span>AWS enterprise</span>
-            <span>Redundant backups</span>
-            <span>99.99% uptime</span>
-          </div>
+        <div class="glass-card">
+          <h3 style="margin-top: 0;">Monitoring</h3>
+          <p style="color: var(--slate); line-height: 1.6; margin: 12px 0 0;">We monitor systems for abnormal activity and maintain audit logs for sensitive operations.</p>
         </div>
       </section>
 
-      <section class="workflow" id="data-handling" aria-labelledby="data-handling-heading">
-        <div>
-          <p class="kicker">Protecting your research data</p>
-          <h2 id="data-handling-heading">How We Handle Your eDNA Data</h2>
-        </div>
-        <div class="workflow-steps">
-          <div class="step-card">
-            <span class="step-number">01</span>
-            <h4>Secure Data Ingestion</h4>
-            <p>Your FASTQ files are uploaded through encrypted HTTPS connections and immediately stored in encrypted AWS S3 buckets with access logging enabled. All uploads are cryptographically verified to prevent tampering.</p>
-          </div>
-          <div class="step-card">
-            <span class="step-number">02</span>
-            <h4>Confidential Processing</h4>
-            <p>Analysis computations run in isolated, time-limited containers on AWS. Intermediate data is never stored unencrypted. After processing, temporary working data is automatically purged from compute instances within 24 hours.</p>
-          </div>
-          <div class="step-card">
-            <span class="step-number">03</span>
-            <h4>Secure Storage & Access</h4>
-            <p>Processed results remain encrypted at rest and in transit. Access to data requires authentication through your organization's SSO provider. All data access is logged and can be audited through our secure dashboard.</p>
-          </div>
+      <section id="data-handling" aria-labelledby="data-handling-heading">
+        <div class="glass-card">
+          <h2 id="data-handling-heading" style="margin-top: 0;">Data Handling</h2>
+          <ul style="color: var(--slate); line-height: 1.8; margin: 16px 0; padding-left: 24px;">
+            <li>FASTQ uploads and pipeline outputs are stored in private buckets with scoped access.</li>
+            <li>Pipeline processing runs in isolated compute environments with controlled permissions.</li>
+            <li>Only necessary metadata is shared with AI systems to generate interpretations.</li>
+          </ul>
         </div>
       </section>
 
-      <section class="comparison" id="security-standards" aria-labelledby="standards-heading">
-        <div>
-          <h2 id="standards-heading">Industry-Leading Security Standards</h2>
-          <p>Oceara meets or exceeds security requirements for regulated research environments, government agencies, and organizations handling sensitive biodiversity data.</p>
-        </div>
-        <div class="comparison-grid">
-          <div class="compare-card">
-            <p><strong>Data Protection</strong></p>
-            <ul><li>AES-256 encryption at rest</li><li>TLS 1.3 in transit</li><li>Key rotation policies</li><li>Hardware security modules</li></ul>
-          </div>
-          <div class="compare-card highlight">
-            <p><strong>Access & Authentication</strong></p>
-            <ul><li>Multi-factor authentication</li><li>SSO/SAML integration</li><li>Role-based access control</li><li>API key management</li></ul>
-          </div>
-          <div class="compare-card">
-            <p><strong>Compliance & Audit</strong></p>
-            <ul><li>SOC 2 Type II certified</li><li>GDPR compliant</li><li>Complete audit logs</li><li>Annual security assessments</li></ul>
-          </div>
-          <div class="compare-card">
-            <p><strong>Infrastructure</strong></p>
-            <ul><li>AWS enterprise hosting</li><li>Geographic redundancy</li><li>Automated backups</li><li>99.99% SLA uptime</li></ul>
-          </div>
+      <section id="operational-practices" aria-labelledby="operational-heading">
+        <div class="glass-card">
+          <h2 id="operational-heading" style="margin-top: 0;">Operational Practices</h2>
+          <ul style="color: var(--slate); line-height: 1.8; margin: 16px 0; padding-left: 24px;">
+            <li>Least-privilege access for internal teams and service accounts.</li>
+            <li>Separation of development and production environments.</li>
+            <li>Regular dependency updates and vulnerability review.</li>
+            <li>Backups and recovery procedures for critical datasets.</li>
+          </ul>
         </div>
       </section>
 
-      <section class="cta-banner">
-        <div>
-          <h2>Request Our Security Whitepaper</h2>
-          <p>Learn detailed information about our security architecture, compliance certifications, and data handling practices. Available for qualified research organizations and government agencies.</p>
+      <section id="incident-response" aria-labelledby="incident-heading">
+        <div class="glass-card">
+          <h2 id="incident-heading" style="margin-top: 0;">Incident Response</h2>
+          <p style="color: var(--slate); line-height: 1.6; margin: 16px 0 0;">We maintain an incident response process that includes triage, containment, customer notification, and remediation steps when needed.</p>
         </div>
-        <button class="btn primary">Request whitepaper</button>
+      </section>
+
+      <section id="user-responsibilities" aria-labelledby="user-heading">
+        <div class="glass-card">
+          <h2 id="user-heading" style="margin-top: 0;">Your Responsibilities</h2>
+          <p style="color: var(--slate); line-height: 1.6; margin: 16px 0 0;">Keep your login credentials secure, invite only trusted collaborators, and remove access promptly when team members leave.</p>
+        </div>
+      </section>
+
+      <section id="security-contact" aria-labelledby="contact-heading">
+        <div class="glass-card">
+          <h2 id="contact-heading" style="margin-top: 0;">Security Contact</h2>
+          <p style="color: var(--slate); line-height: 1.6; margin: 16px 0 0;">Report potential vulnerabilities to <a href="mailto:security@oceara.io" style="color: var(--ocean-blue); font-weight: 500;">security@oceara.io</a></p>
+        </div>
       </section>
     </main>
 
