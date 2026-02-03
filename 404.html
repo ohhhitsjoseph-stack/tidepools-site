@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Not Found | Oceara</title>
+    <meta
+      name="description"
+      content="This page doesn't exist or has moved. Return to Oceara's ocean conservation platform or contact us for assistance." />
+    <meta name="keywords" content="404 error, page not found, Oceara, ocean conservation" />
+    <link rel="canonical" href="https://oceara.io/404.html" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Page Not Found | Oceara" />
+    <meta property="og:description" content="The page you're looking for doesn't exist or has moved." />
+    <meta property="og:url" content="https://oceara.io/404.html" />
+    <meta property="og:site_name" content="Oceara" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Page Not Found | Oceara" />
+    <meta name="twitter:description" content="The page you're looking for doesn't exist or has moved." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --deep-ocean: #0A2540;
+        --ocean-blue: #00A5E0;
+        --seafoam: #00D4AA;
+        --sky-tide: #7DD3E8;
+        --white: #f9feff;
+        --ink: #0A2540;
+        --slate: #4A6178;
+        --mist: #F8FBFD;
+        --glass: rgba(255, 255, 255, 0.72);
+        --shadow: 0 24px 60px rgba(10, 37, 64, 0.25);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top, rgba(10, 37, 64, 0.12), transparent 55%),
+          radial-gradient(circle at 10% 30%, rgba(0, 165, 224, 0.18), transparent 45%),
+          radial-gradient(circle at 80% 20%, rgba(0, 212, 170, 0.2), transparent 45%),
+          #f8fbfd;
+        min-height: 100vh;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:hover { color: var(--ocean-blue); }
+
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 6vw;
+      }
+
+      .ocean { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.55;
+        mix-blend-mode: screen;
+        animation: drift 18s ease-in-out infinite;
+      }
+      .orb-1 {
+        width: 420px; height: 420px;
+        background: radial-gradient(circle, rgba(125, 211, 232, 0.8), rgba(0, 165, 224, 0.2));
+        top: -120px; left: -60px;
+      }
+      .orb-2 {
+        width: 360px; height: 360px;
+        background: radial-gradient(circle, rgba(0, 212, 170, 0.7), rgba(0, 165, 224, 0.2));
+        right: -120px; top: 120px; animation-delay: -6s;
+      }
+      .orb-3 {
+        width: 520px; height: 520px;
+        background: radial-gradient(circle, rgba(0, 165, 224, 0.45), rgba(10, 37, 64, 0.3));
+        bottom: -180px; left: 30%; animation-delay: -10s;
+      }
+      .wave {
+        position: absolute;
+        width: 160%; height: 280px;
+        border-radius: 100%;
+        border: 1px solid rgba(125, 211, 232, 0.6);
+        opacity: 0.6;
+        filter: blur(1px);
+        animation: wave 18s linear infinite;
+      }
+      .wave-1 { top: 20%; left: -30%; }
+      .wave-2 { top: 45%; left: -20%; animation-delay: -6s; opacity: 0.4; }
+      .wave-3 { top: 70%; left: -40%; animation-delay: -10s; opacity: 0.3; }
+
+      .grid {
+        position: absolute; inset: 0;
+        background-image: linear-gradient(90deg, rgba(10, 37, 64, 0.08) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(10, 37, 64, 0.08) 1px, transparent 1px);
+        background-size: 80px 80px; opacity: 0.2; mix-blend-mode: multiply;
+      }
+
+      .nav {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 24px; padding: 28px 6vw 10px;
+      }
+      .logo { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+      .logo-mark {
+        width: 40px; height: 40px;
+        background-image: url('logo.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .logo-text { font-size: 1.1rem; letter-spacing: 0.4px; }
+      .nav-links { display: flex; gap: 22px; font-weight: 500; color: var(--slate); }
+      .nav-actions { display: flex; gap: 12px; }
+
+      .btn {
+        border: none; border-radius: 999px;
+        padding: 12px 20px; font-weight: 600; font-size: 0.95rem;
+        cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn.primary {
+        background: linear-gradient(120deg, var(--ocean-blue), var(--seafoam));
+        color: #fff; box-shadow: 0 16px 30px rgba(0, 165, 224, 0.3);
+      }
+      .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 165, 224, 0.35); }
+      .btn.ghost { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(10, 37, 64, 0.2); color: var(--ink); }
+      .btn.ghost:hover { background: rgba(255, 255, 255, 0.85); }
+
+      .error-container {
+        text-align: center;
+        max-width: 620px;
+        z-index: 1;
+      }
+
+      .error-code {
+        font-size: clamp(5rem, 12vw, 8rem);
+        font-weight: 700;
+        background: linear-gradient(120deg, var(--ocean-blue), var(--seafoam));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .error-title {
+        font-family: "Source Serif 4", serif;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        line-height: 1.1;
+        margin: 20px 0 16px;
+        color: var(--ink);
+      }
+
+      .error-subtitle {
+        color: var(--slate);
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin: 0 0 16px;
+      }
+
+      .error-body {
+        color: var(--slate);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 20px 0 32px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 32px;
+      }
+
+      .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 40px 6vw 60px; color: var(--slate); }
+      .footer-links { display: flex; gap: 16px; }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @keyframes drift {
+        0%, 100% { transform: translate3d(0, 0, 0); }
+        50% { transform: translate3d(30px, -20px, 0); }
+      }
+      @keyframes wave { 0% { transform: translateX(0); } 100% { transform: translateX(12%); } }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .error-code {
+          font-size: 4rem;
+        }
+        .error-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ocean" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="wave wave-1"></div>
+      <div class="wave wave-2"></div>
+      <div class="wave wave-3"></div>
+      <div class="grid"></div>
+    </div>
+
+    <header class="nav" role="banner">
+      <a href="/" class="logo" aria-label="Oceara - Ocean conservation home">
+        <span class="logo-mark" role="img" aria-hidden="true"></span>
+        <span class="logo-text">Oceara</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn ghost">Sign in</button>
+        <button class="btn primary">Book a demo</button>
+      </div>
+    </header>
+
+    <main role="main">
+      <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page not found</h2>
+        <p class="error-subtitle">The page you were looking for doesn't exist or has moved.</p>
+        <p class="error-body">If you followed a link from within Oceara, let us know so we can fix it.</p>
+
+        <div class="cta-buttons">
+          <a href="index.html" class="btn primary">Back to home</a>
+          <a href="contact.html" class="btn ghost">Contact us</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div>
+        <div class="logo">
+          <span class="logo-mark" role="img" aria-label="Oceara logo"></span>
+          <span class="logo-text">Oceara</span>
+        </div>
+        <p>Ocean conservation platform for research teams, marine agencies, and everyone who protects our oceans.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#">Security</a><a href="#">Documentation</a><a href="#">API</a><a href="#">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>
