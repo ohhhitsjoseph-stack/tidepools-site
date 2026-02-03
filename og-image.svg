@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A2540"/>
+      <stop offset="50%" style="stop-color:#0D3B5C"/>
+      <stop offset="100%" style="stop-color:#0A2540"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4AA"/>
+      <stop offset="50%" style="stop-color:#00A5E0"/>
+      <stop offset="100%" style="stop-color:#0A2540"/>
+    </linearGradient>
+    <linearGradient id="orbGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00A5E0;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#00A5E0;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="orbGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00D4AA;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Decorative orbs -->
+  <circle cx="150" cy="500" r="200" fill="url(#orbGrad1)"/>
+  <circle cx="1050" cy="130" r="180" fill="url(#orbGrad2)"/>
+  <circle cx="900" cy="550" r="120" fill="url(#orbGrad1)" opacity="0.5"/>
+
+  <!-- Grid pattern -->
+  <g stroke="#00A5E0" stroke-width="0.5" opacity="0.1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Logo mark - scaled version -->
+  <g transform="translate(100, 180)">
+    <!-- Wave spiral -->
+    <path d="M100 15
+             C 155 15, 185 55, 185 100
+             C 185 120, 175 140, 155 155
+             C 135 170, 110 175, 85 170
+             C 60 165, 40 150, 30 125
+             C 25 110, 25 95, 30 80
+             C 40 55, 65 40, 95 40
+             C 115 40, 130 50, 140 65
+             C 150 80, 150 95, 145 110
+             C 140 125, 125 135, 105 135
+             C 90 135, 78 125, 75 110
+             C 72 95, 80 82, 95 80
+             C 105 78, 112 85, 112 95"
+          fill="none"
+          stroke="url(#waveGrad)"
+          stroke-width="18"
+          stroke-linecap="round"
+          transform="scale(1.3)"/>
+
+    <!-- Inner wave curl -->
+    <path d="M55 145
+             Q 45 160, 55 175
+             Q 70 190, 95 185
+             Q 125 180, 145 165"
+          fill="none"
+          stroke="#00A5E0"
+          stroke-width="14"
+          stroke-linecap="round"
+          transform="scale(1.3)"/>
+
+    <!-- Secondary wave line -->
+    <path d="M35 125
+             Q 25 145, 35 165
+             Q 50 185, 80 190
+             Q 115 195, 150 180"
+          fill="none"
+          stroke="#0A2540"
+          stroke-width="10"
+          stroke-linecap="round"
+          transform="scale(1.3)"/>
+
+    <!-- Data network nodes -->
+    <g fill="white" stroke="white" stroke-width="2" transform="scale(1.3)">
+      <line x1="130" y1="85" x2="160" y2="65" stroke-width="3"/>
+      <line x1="160" y1="65" x2="175" y2="95" stroke-width="3"/>
+      <line x1="175" y1="95" x2="155" y2="125" stroke-width="3"/>
+      <line x1="155" y1="125" x2="130" y2="85" stroke-width="3"/>
+      <line x1="160" y1="65" x2="155" y2="125" stroke-width="3"/>
+      <line x1="155" y1="125" x2="135" y2="155" stroke-width="3"/>
+      <circle cx="130" cy="85" r="6"/>
+      <circle cx="160" cy="65" r="6"/>
+      <circle cx="175" cy="95" r="6"/>
+      <circle cx="155" cy="125" r="6"/>
+      <circle cx="135" cy="155" r="6"/>
+    </g>
+  </g>
+
+  <!-- Text content -->
+  <g fill="white" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+    <!-- Brand name -->
+    <text x="480" y="260" font-size="72" font-weight="700" letter-spacing="-2">OCEARA</text>
+
+    <!-- Tagline -->
+    <text x="480" y="320" font-size="28" font-weight="400" fill="#7DD3E8">No-Code eDNA Analysis Platform</text>
+
+    <!-- Description -->
+    <text x="480" y="390" font-size="22" font-weight="400" fill="#94A3B8">Turn environmental DNA into biodiversity</text>
+    <text x="480" y="420" font-size="22" font-weight="400" fill="#94A3B8">insights in minutes. No coding required.</text>
+  </g>
+
+  <!-- URL -->
+  <text x="480" y="520" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#00D4AA">oceara.io</text>
+
+  <!-- Decorative DNA helix dots on right side -->
+  <g fill="#00A5E0" opacity="0.3">
+    <circle cx="1100" cy="200" r="4"/>
+    <circle cx="1080" cy="230" r="3"/>
+    <circle cx="1110" cy="260" r="5"/>
+    <circle cx="1090" cy="290" r="3"/>
+    <circle cx="1105" cy="320" r="4"/>
+    <circle cx="1085" cy="350" r="3"/>
+    <circle cx="1100" cy="380" r="5"/>
+    <circle cx="1080" cy="410" r="4"/>
+  </g>
+</svg>
