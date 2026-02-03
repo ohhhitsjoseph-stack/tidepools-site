@@ -421,10 +421,95 @@
 
       /* Responsive */
       @media (max-width: 768px) {
-        .nav { flex-wrap: wrap; }
+        body { font-size: 15px; }
+
+        main { gap: 50px; padding: 24px 5vw 60px; }
+
+        /* Mobile Navigation */
+        .nav {
+          padding: 16px 5vw;
+          gap: 12px;
+        }
         .nav-links { display: none; }
-        .card-grid { grid-template-columns: 1fr; }
-        .cta-banner { flex-direction: column; text-align: center; }
+        .nav-actions {
+          gap: 8px;
+          margin-left: auto;
+        }
+        .nav-actions .btn {
+          padding: 10px 16px;
+          font-size: 0.8rem;
+        }
+        .logo-mark { width: 36px; height: 36px; }
+        .logo-text { font-size: 1.1rem; }
+
+        /* Mobile Hero */
+        .hero { gap: 40px; }
+        .hero h1 {
+          font-size: 2rem;
+          line-height: 1.15;
+          margin: 12px 0;
+        }
+        .kicker { font-size: 0.7rem; letter-spacing: 1.5px; }
+        .hero-subtitle {
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+        .cta-row {
+          flex-direction: column;
+          gap: 12px;
+          margin: 24px 0 20px;
+        }
+        .cta-row .btn {
+          width: 100%;
+          padding: 14px 20px;
+          font-size: 0.95rem;
+        }
+
+        /* Mobile Cards */
+        .hero-showcase { display: none; }
+        .glass-card {
+          padding: 20px;
+          border-radius: 20px;
+        }
+        .card-grid { grid-template-columns: 1fr; gap: 16px; }
+
+        /* Mobile Sections */
+        .section-header h2 { font-size: 1.6rem; }
+        .section-header p { font-size: 0.9rem; }
+
+        .workflow-step { padding: 20px; }
+        .step-number { width: 36px; height: 36px; font-size: 0.9rem; }
+        .step-content h3 { font-size: 1rem; }
+        .step-content p { font-size: 0.85rem; }
+
+        /* Mobile CTA Banner */
+        .cta-banner {
+          flex-direction: column;
+          text-align: center;
+          padding: 32px 20px;
+          gap: 20px;
+        }
+        .cta-banner h2 { font-size: 1.4rem; }
+        .cta-banner p { font-size: 0.9rem; }
+
+        /* Mobile Footer */
+        .footer {
+          flex-direction: column;
+          gap: 24px;
+          padding: 32px 5vw 48px;
+          text-align: center;
+        }
+        .footer-links {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 12px 20px;
+        }
+        .footer .logo { justify-content: center; }
+      }
+
+      @media (max-width: 400px) {
+        .nav-actions .btn.ghost { display: none; }
+        .hero h1 { font-size: 1.75rem; }
       }
     </style>
   </head>
