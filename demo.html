@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book a Demo | Oceara</title>
+    <meta
+      name="description"
+      content="Schedule a personalized demo of Oceara and see how our platform transforms environmental DNA into species detection and biodiversity insights." />
+    <meta name="keywords" content="Oceara demo, eDNA demo, biodiversity analysis, species detection demo, no-code bioinformatics" />
+    <link rel="canonical" href="https://oceara.io/demo.html" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Book a Demo | Oceara" />
+    <meta property="og:description" content="Schedule a personalized demo of Oceara and see how to detect species and monitor biodiversity in minutes." />
+    <meta property="og:url" content="https://oceara.io/demo.html" />
+    <meta property="og:site_name" content="Oceara" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Book a Demo | Oceara" />
+    <meta name="twitter:description" content="Schedule a demo and see how Oceara transforms environmental DNA into biodiversity insights." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --deep-ocean: #0A2540;
+        --ocean-blue: #00A5E0;
+        --seafoam: #00D4AA;
+        --sky-tide: #7DD3E8;
+        --ink: #0A2540;
+        --slate: #4A6178;
+        --mist: #F8FBFD;
+        --white: #f9feff;
+        --muted: rgba(10, 37, 64, 0.7);
+        --glass: rgba(255, 255, 255, 0.72);
+        --shadow: 0 24px 60px rgba(10, 37, 64, 0.25);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top, rgba(10, 37, 64, 0.12), transparent 55%),
+          radial-gradient(circle at 10% 30%, rgba(0, 165, 224, 0.18), transparent 45%),
+          radial-gradient(circle at 80% 20%, rgba(0, 212, 170, 0.2), transparent 45%),
+          #f6fbff;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:hover { color: var(--ocean-blue); }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 40px 6vw 80px;
+      }
+
+      .ocean { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.55;
+        mix-blend-mode: screen;
+        animation: drift 18s ease-in-out infinite;
+      }
+      .orb-1 {
+        width: 420px; height: 420px;
+        background: radial-gradient(circle, rgba(125, 211, 232, 0.8), rgba(0, 165, 224, 0.2));
+        top: -120px; left: -60px;
+      }
+      .orb-2 {
+        width: 360px; height: 360px;
+        background: radial-gradient(circle, rgba(0, 212, 170, 0.7), rgba(0, 165, 224, 0.2));
+        right: -120px; top: 120px; animation-delay: -6s;
+      }
+      .orb-3 {
+        width: 520px; height: 520px;
+        background: radial-gradient(circle, rgba(0, 165, 224, 0.45), rgba(10, 37, 64, 0.3));
+        bottom: -180px; left: 30%; animation-delay: -10s;
+      }
+      .wave {
+        position: absolute;
+        width: 160%; height: 280px;
+        border-radius: 100%;
+        border: 1px solid rgba(125, 211, 232, 0.6);
+        opacity: 0.6;
+        filter: blur(1px);
+        animation: wave 18s linear infinite;
+      }
+      .wave-1 { top: 20%; left: -30%; }
+      .wave-2 { top: 45%; left: -20%; animation-delay: -6s; opacity: 0.4; }
+      .wave-3 { top: 70%; left: -40%; animation-delay: -10s; opacity: 0.3; }
+
+      .grid {
+        position: absolute; inset: 0;
+        background-image: linear-gradient(90deg, rgba(10, 37, 64, 0.08) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(10, 37, 64, 0.08) 1px, transparent 1px);
+        background-size: 80px 80px; opacity: 0.2; mix-blend-mode: multiply;
+      }
+
+      .nav {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 24px; padding: 28px 6vw 10px;
+      }
+      .logo { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+      .logo-mark {
+        width: 40px; height: 40px;
+        background-image: url('logo.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .logo-text { font-size: 1.1rem; letter-spacing: 0.4px; }
+      .nav-links { display: flex; gap: 22px; font-weight: 500; color: var(--muted); }
+      .nav-actions { display: flex; gap: 12px; }
+
+      .btn {
+        border: none; border-radius: 999px;
+        padding: 12px 20px; font-weight: 600; font-size: 0.95rem;
+        cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .btn.primary {
+        background: linear-gradient(120deg, var(--ocean-blue), var(--seafoam));
+        color: #fff; box-shadow: 0 16px 30px rgba(0, 165, 224, 0.3);
+      }
+      .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 165, 224, 0.35); }
+      .btn.ghost { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(10, 37, 64, 0.2); color: var(--ink); }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+      }
+      .hero h1 {
+        font-family: "Source Serif 4", serif;
+        font-size: clamp(2.5rem, 3.6vw, 4rem);
+        line-height: 1.05; margin: 18px 0;
+      }
+      .kicker { text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; color: var(--ocean-blue); font-weight: 600; }
+      .hero-subtitle { color: var(--muted); font-size: 1.05rem; max-width: 560px; line-height: 1.6; }
+
+      .glass-card {
+        background: var(--glass); border-radius: var(--radius-xl); padding: 24px;
+        box-shadow: var(--shadow); border: 1px solid rgba(10, 37, 64, 0.12); backdrop-filter: blur(20px);
+      }
+      .glass-card.form-card {
+        max-width: 500px;
+        margin: 40px auto 0;
+        padding: 40px;
+      }
+
+      .card-title { margin: 0; font-weight: 600; font-size: 1.1rem; }
+      .card-subtitle { margin: 6px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+      .form-group {
+        margin-bottom: 22px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: var(--ink);
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid rgba(10, 37, 64, 0.15);
+        border-radius: var(--radius-md);
+        font-family: inherit;
+        font-size: 0.95rem;
+        background: rgba(255, 255, 255, 0.8);
+        color: var(--ink);
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--ocean-blue);
+        background-color: #fff;
+        box-shadow: 0 0 0 3px rgba(0, 165, 224, 0.1);
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 110px;
+      }
+
+      .form-submit {
+        width: 100%;
+        margin-top: 28px;
+      }
+
+      .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 40px 6vw 60px; color: var(--muted); }
+      .footer-links { display: flex; gap: 16px; }
+
+      /* Screen reader only - for accessibility */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @keyframes drift {
+        0%, 100% { transform: translate3d(0, 0, 0); }
+        50% { transform: translate3d(30px, -20px, 0); }
+      }
+      @keyframes wave { 0% { transform: translateX(0); } 100% { transform: translateX(12%); } }
+    </style>
+  </head>
+  <body>
+    <div class="ocean" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="wave wave-1"></div>
+      <div class="wave wave-2"></div>
+      <div class="wave wave-3"></div>
+      <div class="grid"></div>
+    </div>
+
+    <header class="nav" role="banner">
+      <a href="/" class="logo" aria-label="Oceara - Environmental DNA platform home">
+        <span class="logo-mark" role="img" aria-hidden="true"></span>
+        <span class="logo-text">Oceara</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#platform">Platform</a>
+        <a href="/#workflow">Features</a>
+        <a href="/#science">How It Works</a>
+        <a href="/#use-cases">Use Cases</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn ghost">Sign in</button>
+        <button class="btn primary">Book a demo</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="demo-hero">
+        <div>
+          <p class="kicker">Live Demo Experience</p>
+          <h1>Book Your Oceara Demo</h1>
+          <p class="hero-subtitle">
+            See how Oceara transforms environmental DNA into species detection and biodiversity insights in minutes.
+            Our team will walk you through a live analysis, show you the interactive dashboards, and explain how no-code
+            eDNA metabarcoding can accelerate your research.
+          </p>
+        </div>
+
+        <div class="glass-card form-card">
+          <h2 class="card-title">Schedule Your Demo</h2>
+          <p class="card-subtitle">Fill out the form below and we'll be in touch within 24 hours</p>
+
+          <form id="demo-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="John Doe"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="workEmail">Work Email</label>
+              <input
+                type="email"
+                id="workEmail"
+                name="workEmail"
+                placeholder="john@organization.org"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="organization">Organization Name</label>
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                placeholder="Your Organization"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="role">Role / Title</label>
+              <input
+                type="text"
+                id="role"
+                name="role"
+                placeholder="Research Director"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="hearAbout">How did you hear about us?</label>
+              <select id="hearAbout" name="hearAbout" required>
+                <option value="">Select an option</option>
+                <option value="search">Web Search</option>
+                <option value="conference">Conference / Event</option>
+                <option value="colleague">Colleague / Referral</option>
+                <option value="social">Social Media</option>
+                <option value="publication">Scientific Publication</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="goals">What are you hoping to accomplish with eDNA analysis?</label>
+              <textarea
+                id="goals"
+                name="goals"
+                placeholder="Tell us about your eDNA research goals and challenges..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn primary form-submit">Schedule Demo</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div>
+        <div class="logo">
+          <span class="logo-mark" role="img" aria-label="Oceara logo"></span>
+          <span class="logo-text">Oceara</span>
+        </div>
+        <p>No-code eDNA bioinformatics for conservation teams, coastal agencies, and everyone who protects aquatic ecosystems.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#">Security</a><a href="#">Documentation</a><a href="#">API</a><a href="#">Contact</a>
+      </nav>
+    </footer>
+
+    <script>
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        // Collect form data
+        const formData = {
+          fullName: document.getElementById('fullName').value,
+          workEmail: document.getElementById('workEmail').value,
+          organization: document.getElementById('organization').value,
+          role: document.getElementById('role').value,
+          hearAbout: document.getElementById('hearAbout').value,
+          goals: document.getElementById('goals').value,
+        };
+        console.log('Demo request submitted:', formData);
+        // In a real application, you would send this to a backend service here
+        alert('Thank you! We\'ll be in touch within 24 hours to schedule your demo.');
+        document.getElementById('demo-form').reset();
+      }
+    </script>
+  </body>
+</html>

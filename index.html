@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oceara | No-Code eDNA Metabarcoding & Biodiversity Analysis Platform</title>
+    <meta
+      name="description"
+      content="Oceara is the no-code eDNA metabarcoding platform for conservation teams. Detect species, monitor biodiversity, track invasive species, and generate stakeholder-ready reports—no bioinformatics expertise required." />
+    <meta name="keywords" content="Oceara, eDNA, environmental DNA, metabarcoding, biodiversity monitoring, species detection, bioinformatics software, no-code bioinformatics, conservation genetics, invasive species detection, endangered species monitoring, ecosystem monitoring, water quality assessment, DNA sequencing analysis, taxonomic assignment, aquatic biodiversity" />
+    <link rel="canonical" href="https://oceara.io/" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Oceara | No-Code eDNA Metabarcoding & Biodiversity Analysis" />
+    <meta property="og:description" content="The new era of environmental DNA analysis. Turn eDNA into biodiversity insights in minutes. No coding required. Perfect for conservation labs, coastal agencies, and environmental teams." />
+    <meta property="og:url" content="https://oceara.io/" />
+    <meta property="og:site_name" content="Oceara" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Oceara | No-Code eDNA Metabarcoding Platform" />
+    <meta name="twitter:description" content="The new era of eDNA bioinformatics for non-technical teams. Species detection, biodiversity monitoring, and stakeholder-ready reports." />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Oceara",
+      "applicationCategory": "Scientific Software",
+      "operatingSystem": "Web-based",
+      "url": "https://oceara.io",
+      "description": "No-code eDNA metabarcoding and biodiversity analysis platform for environmental DNA species detection and ecosystem monitoring.",
+      "offers": {
+        "@type": "Offer",
+        "category": "SaaS"
+      },
+      "featureList": [
+        "eDNA metabarcoding analysis",
+        "Species detection and identification",
+        "Biodiversity monitoring",
+        "Invasive species tracking",
+        "No-code bioinformatics pipeline",
+        "Stakeholder-ready reports",
+        "Interactive biodiversity maps"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Conservation labs, coastal agencies, environmental researchers, ecology teams"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        /* Oceara Brand Colors */
+        --deep-ocean: #0A2540;
+        --ocean-blue: #00A5E0;
+        --seafoam: #00D4AA;
+        --sky-tide: #7DD3E8;
+        --kelp-green: #2ECC71;
+        --mist: #F8FBFD;
+        --white: #FFFFFF;
+        --ink: #0A2540;
+        --slate: #4A6178;
+        --muted: rgba(10, 37, 64, 0.65);
+        --glass: rgba(255, 255, 255, 0.78);
+        --shadow: 0 24px 60px rgba(10, 37, 64, 0.18);
+        --radius-xl: 28px;
+        --radius-lg: 20px;
+        --radius-md: 14px;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse at 20% 0%, rgba(0, 165, 224, 0.12), transparent 50%),
+          radial-gradient(ellipse at 80% 10%, rgba(0, 212, 170, 0.1), transparent 45%),
+          radial-gradient(ellipse at 50% 80%, rgba(125, 211, 232, 0.08), transparent 50%),
+          var(--mist);
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+      a:hover { color: var(--ocean-blue); }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+        padding: 50px 6vw 100px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* Ocean Background Effects */
+      .ocean { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.45;
+        filter: blur(60px);
+        animation: drift 20s ease-in-out infinite;
+      }
+      .orb-1 {
+        width: 500px; height: 500px;
+        background: radial-gradient(circle, rgba(0, 165, 224, 0.5), rgba(125, 211, 232, 0.2));
+        top: -150px; left: -100px;
+      }
+      .orb-2 {
+        width: 400px; height: 400px;
+        background: radial-gradient(circle, rgba(0, 212, 170, 0.4), rgba(46, 204, 113, 0.15));
+        right: -100px; top: 200px; animation-delay: -7s;
+      }
+      .orb-3 {
+        width: 600px; height: 600px;
+        background: radial-gradient(circle, rgba(125, 211, 232, 0.35), rgba(0, 165, 224, 0.15));
+        bottom: -200px; left: 25%; animation-delay: -12s;
+      }
+      .wave {
+        position: absolute;
+        width: 180%; height: 300px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 165, 224, 0.2);
+        opacity: 0.5;
+        animation: wave 22s linear infinite;
+      }
+      .wave-1 { top: 15%; left: -40%; }
+      .wave-2 { top: 45%; left: -30%; animation-delay: -8s; opacity: 0.3; }
+      .wave-3 { top: 72%; left: -50%; animation-delay: -14s; opacity: 0.2; }
+
+      .grid {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(90deg, rgba(10, 37, 64, 0.04) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(10, 37, 64, 0.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      }
+
+      /* Navigation */
+      .nav {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 24px; padding: 24px 6vw;
+        max-width: 1400px; margin: 0 auto;
+      }
+      .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+      .logo-mark {
+        width: 40px; height: 40px;
+        background-image: url('logo.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .logo-text { font-size: 1.25rem; letter-spacing: -0.5px; color: var(--deep-ocean); }
+      .nav-links { display: flex; gap: 28px; font-weight: 500; font-size: 0.95rem; color: var(--slate); }
+      .nav-actions { display: flex; gap: 12px; }
+
+      /* Buttons */
+      .btn {
+        display: inline-block; border: none; border-radius: 999px;
+        padding: 12px 22px; font-weight: 600; font-size: 0.9rem;
+        cursor: pointer; transition: all 0.2s ease;
+        text-decoration: none; text-align: center;
+        font-family: inherit;
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, var(--ocean-blue), var(--seafoam));
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(0, 165, 224, 0.35);
+      }
+      .btn.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(0, 165, 224, 0.4);
+      }
+      .btn.ghost {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(10, 37, 64, 0.12);
+        color: var(--ink);
+        backdrop-filter: blur(10px);
+      }
+      .btn.ghost:hover {
+        background: rgba(255, 255, 255, 1);
+        border-color: rgba(0, 165, 224, 0.3);
+      }
+
+      /* Hero Section */
+      .hero {
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: 60px; align-items: center;
+      }
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; }
+      }
+      .hero h1 {
+        font-family: "Source Serif 4", Georgia, serif;
+        font-size: clamp(2.4rem, 4vw, 3.5rem);
+        line-height: 1.1; margin: 16px 0;
+        color: var(--deep-ocean);
+        font-weight: 600;
+      }
+      .kicker {
+        text-transform: uppercase; letter-spacing: 2px;
+        font-size: 0.75rem; color: var(--ocean-blue);
+        font-weight: 600;
+      }
+      .hero-subtitle {
+        color: var(--slate); font-size: 1.05rem;
+        max-width: 520px; line-height: 1.7;
+      }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 32px 0 24px; }
+
+      /* Glass Cards */
+      .glass-card {
+        background: var(--glass);
+        border-radius: var(--radius-xl);
+        padding: 28px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(10, 37, 64, 0.06);
+        backdrop-filter: blur(20px);
+      }
+      .glass-card.outline {
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(0, 165, 224, 0.15);
+        margin-top: 20px;
+      }
+      .card-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+      .card-title { margin: 0; font-weight: 600; font-size: 1.1rem; color: var(--deep-ocean); }
+      .card-subtitle { margin: 6px 0 0; color: var(--slate); font-size: 0.9rem; }
+      .status {
+        padding: 6px 14px; border-radius: 999px;
+        background: linear-gradient(135deg, rgba(0, 165, 224, 0.15), rgba(0, 212, 170, 0.15));
+        color: var(--ocean-blue); font-weight: 600; font-size: 0.75rem;
+      }
+
+      /* Spectrum Bar */
+      .spectrum {
+        margin: 20px 0 22px; height: 8px; border-radius: 999px;
+        background: linear-gradient(90deg, var(--deep-ocean), var(--ocean-blue), var(--sky-tide), var(--seafoam));
+        position: relative; overflow: hidden;
+      }
+      .spectrum::after {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.6), transparent 80%);
+        transform: translateX(-100%); animation: shimmer 3s ease-in-out infinite;
+      }
+
+      /* Mini Cards Grid */
+      .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .mini-card {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: var(--radius-md);
+        padding: 14px 16px;
+        border: 1px solid rgba(10, 37, 64, 0.05);
+      }
+      .mini-title { margin: 0; font-size: 0.7rem; color: var(--slate); text-transform: uppercase; letter-spacing: 1px; }
+      .mini-value { margin: 6px 0 4px; font-size: 1.3rem; font-weight: 700; color: var(--deep-ocean); }
+      .mini-foot { margin: 0; color: var(--seafoam); font-size: 0.8rem; font-weight: 500; }
+
+      /* Timeline */
+      .timeline { margin-top: 20px; display: grid; gap: 10px; font-size: 0.9rem; }
+      .timeline-row { display: flex; align-items: center; gap: 12px; color: var(--slate); }
+      .timeline-row .dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: var(--seafoam);
+        box-shadow: 0 0 0 4px rgba(0, 212, 170, 0.2);
+      }
+
+      /* Pills */
+      .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+      .pill-row span {
+        padding: 8px 14px;
+        background: linear-gradient(135deg, rgba(0, 165, 224, 0.1), rgba(0, 212, 170, 0.1));
+        color: var(--deep-ocean);
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      /* Partners */
+      .partners {
+        display: flex; flex-direction: column; align-items: center;
+        gap: 20px; text-align: center; color: var(--slate);
+      }
+      .logo-row {
+        display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;
+        font-weight: 600; color: var(--deep-ocean); opacity: 0.6;
+        font-size: 0.95rem;
+      }
+
+      /* Feature Grid */
+      .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+      .feature-card {
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        border: 1px solid rgba(10, 37, 64, 0.05);
+        box-shadow: 0 12px 40px rgba(10, 37, 64, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 50px rgba(10, 37, 64, 0.12);
+      }
+      .feature-card h3 { margin-top: 0; color: var(--deep-ocean); font-size: 1.15rem; }
+      .feature-card p { color: var(--slate); line-height: 1.7; margin-bottom: 0; }
+
+      /* Workflow Section */
+      .workflow { display: grid; gap: 32px; }
+      .workflow h2 { color: var(--deep-ocean); margin-bottom: 0; }
+      .workflow-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+      .step-card {
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        border: 1px solid rgba(10, 37, 64, 0.05);
+        transition: transform 0.2s ease;
+      }
+      .step-card:hover { transform: translateY(-2px); }
+      .step-number {
+        font-size: 2.5rem; font-weight: 700;
+        background: linear-gradient(135deg, var(--ocean-blue), var(--seafoam));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .step-card h4 { color: var(--deep-ocean); margin: 8px 0 12px; }
+      .step-card p { color: var(--slate); line-height: 1.7; margin: 0; }
+
+      /* Comparison Section */
+      .comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
+      .comparison h2 { color: var(--deep-ocean); }
+      .comparison > div > p { color: var(--slate); line-height: 1.7; }
+      .comparison-grid { display: grid; gap: 16px; }
+      .compare-card {
+        padding: 24px;
+        border-radius: var(--radius-lg);
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(10, 37, 64, 0.05);
+      }
+      .compare-card ul { margin: 14px 0 0; padding-left: 20px; color: var(--slate); line-height: 1.8; }
+      .compare-card.highlight {
+        background: linear-gradient(135deg, rgba(0, 165, 224, 0.08), rgba(0, 212, 170, 0.12));
+        border: 1px solid rgba(0, 165, 224, 0.2);
+      }
+
+      /* CTA Banner */
+      .cta-banner {
+        display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+        gap: 24px; padding: 36px 40px; border-radius: var(--radius-xl);
+        background: linear-gradient(135deg, var(--deep-ocean), #1a4a6e);
+        color: #fff;
+        box-shadow: 0 24px 50px rgba(10, 37, 64, 0.3);
+      }
+      .cta-banner h2 { margin: 0 0 8px; }
+      .cta-banner p { max-width: 500px; color: rgba(255, 255, 255, 0.8); margin: 0; }
+      .cta-banner .btn.primary {
+        background: linear-gradient(135deg, var(--seafoam), var(--ocean-blue));
+      }
+
+      /* Footer */
+      .footer {
+        display: flex; flex-wrap: wrap; justify-content: space-between;
+        gap: 24px; padding: 50px 6vw 70px;
+        color: var(--slate);
+        max-width: 1400px; margin: 0 auto;
+      }
+      .footer .logo-text { color: var(--deep-ocean); }
+      .footer p { max-width: 350px; font-size: 0.9rem; line-height: 1.6; }
+      .footer-links { display: flex; gap: 20px; font-size: 0.9rem; }
+
+      /* FAQ Section */
+      .faq-section h2 { color: var(--deep-ocean); }
+      .faq-section h3 {
+        font-size: 1.05rem;
+        color: var(--deep-ocean);
+        margin-top: 0;
+      }
+
+      /* Screen reader only */
+      .sr-only {
+        position: absolute; width: 1px; height: 1px; padding: 0;
+        margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0);
+        white-space: nowrap; border: 0;
+      }
+
+      /* Animations */
+      @keyframes drift {
+        0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+        50% { transform: translate3d(40px, -30px, 0) scale(1.05); }
+      }
+      @keyframes wave {
+        0% { transform: translateX(0) rotate(0deg); }
+        100% { transform: translateX(15%) rotate(2deg); }
+      }
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(200%); }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav { flex-wrap: wrap; }
+        .nav-links { display: none; }
+        .card-grid { grid-template-columns: 1fr; }
+        .cta-banner { flex-direction: column; text-align: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ocean" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="wave wave-1"></div>
+      <div class="wave wave-2"></div>
+      <div class="wave wave-3"></div>
+      <div class="grid"></div>
+    </div>
+
+    <header class="nav" role="banner">
+      <a href="/" class="logo" aria-label="Oceara - eDNA bioinformatics home">
+        <span class="logo-mark" role="img" aria-hidden="true"></span>
+        <span class="logo-text">Oceara</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#platform">Platform</a>
+        <a href="#workflow">Features</a>
+        <a href="#science">How It Works</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="signin.html" class="btn ghost">Sign in</a>
+        <a href="demo.html" class="btn primary">Book a demo</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="platform">
+        <div>
+          <p class="kicker">The new era of environmental DNA</p>
+          <h1>Oceara transforms eDNA into species detection and biodiversity insights—in minutes.</h1>
+          <p class="hero-subtitle">
+            Upload FASTQ files from water samples, run our automated eDNA metabarcoding pipeline, and generate
+            stakeholder-ready biodiversity reports with species identification, interactive ecosystem maps,
+            and plain-language summaries—no bioinformatics expertise required.
+          </p>
+          <div class="cta-row">
+            <a href="demo.html" class="btn primary">Start a live demo</a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn ghost">Watch 90-sec tour</a>
+          </div>
+        </div>
+
+        <div class="hero-showcase">
+          <div class="glass-card">
+            <div class="card-header">
+              <div>
+                <p class="card-title">Live Ecosystem Scan</p>
+                <p class="card-subtitle">Puget Sound · Zone 3</p>
+              </div>
+              <span class="status">Processing</span>
+            </div>
+            <div class="spectrum"></div>
+            <div class="card-grid">
+              <div class="mini-card">
+                <p class="mini-title">Species</p>
+                <p class="mini-value">248</p>
+                <p class="mini-foot">+12 new</p>
+              </div>
+              <div class="mini-card">
+                <p class="mini-title">Read depth</p>
+                <p class="mini-value">36.2M</p>
+                <p class="mini-foot">Stable</p>
+              </div>
+              <div class="mini-card">
+                <p class="mini-title">Confidence</p>
+                <p class="mini-value">High</p>
+                <p class="mini-foot">QC passed</p>
+              </div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><span class="dot"></span><p>Primer validation completed</p></div>
+              <div class="timeline-row"><span class="dot"></span><p>Contaminant filter applied</p></div>
+              <div class="timeline-row"><span class="dot"></span><p>Taxonomy normalized for report</p></div>
+            </div>
+          </div>
+
+          <div class="glass-card outline">
+            <p class="card-title">Explainable Species Detection</p>
+            <p class="card-subtitle">
+              Every taxonomic assignment includes confidence scores, reference database citations, and export-ready conservation reports.
+            </p>
+            <div class="pill-row">
+              <span>Auto-generated narrative</span>
+              <span>Biodiversity maps</span>
+              <span>Conservation-ready PDF</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners" aria-label="Trusted partners">
+        <p>Trusted by conservation labs, coastal agencies, and ecosystem monitoring teams worldwide.</p>
+        <div class="logo-row">
+          <span>Aquaterra</span><span>BlueCurrent</span><span>Nova Marine</span><span>Seaward Labs</span><span>EcoPulse</span>
+        </div>
+      </section>
+
+      <section class="feature-grid" id="workflow" aria-labelledby="features-heading">
+        <h2 id="features-heading" class="sr-only">eDNA Metabarcoding Features</h2>
+        <div class="feature-card">
+          <h3>No-Code eDNA Analysis Pipeline</h3>
+          <p>Upload raw DNA sequencing reads, answer a few prompts, and let Oceara configure quality filtering, primer trimming, and taxonomic assignment automatically—no command-line expertise needed.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Interactive Biodiversity Dashboards</h3>
+          <p>Explore species detection results with animated ecosystem maps, prevalence charts, and shareable biodiversity visualizations perfect for conservation reporting.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Explainable Species Identification</h3>
+          <p>Every species detection includes confidence scores, reference database citations, and plain-language summaries—so you can explain results to stakeholders and decision makers.</p>
+        </div>
+      </section>
+
+      <section class="workflow" id="science" aria-labelledby="workflow-heading">
+        <div>
+          <p class="kicker">From water sample to species report</p>
+          <h2 id="workflow-heading">Automated eDNA Metabarcoding in Three Steps</h2>
+        </div>
+        <div class="workflow-steps">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <h4>Import & Validate DNA Sequences</h4>
+            <p>Upload FASTQ files from your eDNA water sampling. Oceara automatically validates primers, checks read depth, and flags potential contamination.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <h4>Species Detection & Taxonomic Assignment</h4>
+            <p>Our bioinformatics pipeline matches sequences against reference databases, assigns taxonomy, calculates confidence tiers, and generates ecological summaries you can understand instantly.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <h4>Biodiversity Reporting</h4>
+            <p>Export stakeholder-ready reports: interactive species dashboards, conservation-ready PDFs, and GIS-compatible map layers—all with a single click.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="comparison" id="pricing" aria-labelledby="comparison-heading">
+        <div>
+          <h2 id="comparison-heading">Built for Conservation Teams Without Bioinformatics Staff</h2>
+          <p>Oceara replaces complex command-line tools like OBITools, QIIME, and custom scripts with an intuitive, guided workspace for eDNA metabarcoding and biodiversity analysis.</p>
+        </div>
+        <div class="comparison-grid">
+          <div class="compare-card">
+            <p><strong>Traditional eDNA Pipelines</strong></p>
+            <ul>
+              <li>Requires command-line and bioinformatics expertise</li>
+              <li>Fragmented tools (DADA2, BLAST, custom scripts)</li>
+              <li>Difficult to explain results to stakeholders</li>
+              <li>No built-in conservation reporting</li>
+            </ul>
+          </div>
+          <div class="compare-card highlight">
+            <p><strong>Oceara No-Code Platform</strong></p>
+            <ul>
+              <li>Guided, browser-based eDNA analysis</li>
+              <li>Integrated QC, taxonomic assignment, and visualization</li>
+              <li>Stakeholder-ready biodiversity reports</li>
+              <li>Built for invasive species & conservation monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases Section -->
+      <section class="feature-grid" id="use-cases" aria-labelledby="usecases-heading">
+        <h2 id="usecases-heading" style="grid-column: 1 / -1; text-align: center; margin-bottom: 16px; color: var(--deep-ocean);">eDNA Applications for Ecosystem Monitoring</h2>
+        <div class="feature-card">
+          <h3>Invasive Species Detection</h3>
+          <p>Detect invasive aquatic species early using environmental DNA water sampling. Identify threats like Asian carp, zebra mussels, and invasive fish before populations establish—enabling rapid response and ecosystem protection.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Endangered Species Monitoring</h3>
+          <p>Non-invasive monitoring of rare and endangered species using eDNA. Track elusive amphibians, fish, and aquatic mammals without disturbing habitats—perfect for conservation compliance and recovery programs.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Water Quality Assessment</h3>
+          <p>Assess ecosystem health through biodiversity metrics. Detect harmful algal blooms, monitor indicator species, and generate water quality reports for regulatory compliance and public health protection.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Marine & Freshwater Biodiversity</h3>
+          <p>Comprehensive biodiversity surveys for coastal, estuarine, and freshwater ecosystems. From coral reef fish assemblages to river basin species inventories—understand your ecosystem in one analysis.</p>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section" id="faq" aria-labelledby="faq-heading" style="max-width: 800px; margin: 0 auto;">
+        <h2 id="faq-heading" style="text-align: center; margin-bottom: 28px;">Frequently Asked Questions About eDNA Analysis</h2>
+        <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="glass-card outline" style="margin-bottom: 16px;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">What is eDNA metabarcoding?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text" style="color: var(--slate); margin-bottom: 0;">eDNA metabarcoding is a method that uses environmental DNA (genetic material shed by organisms into water, soil, or air) combined with high-throughput DNA sequencing to identify multiple species simultaneously from a single sample. It's a non-invasive approach to biodiversity monitoring that doesn't require capturing or disturbing organisms.</p>
+            </div>
+          </div>
+          <div class="glass-card outline" style="margin-bottom: 16px;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">Do I need coding or bioinformatics experience to use Oceara?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text" style="color: var(--slate); margin-bottom: 0;">No. Oceara is specifically designed for conservation teams, ecologists, and environmental managers without bioinformatics backgrounds. Our no-code platform handles all the complex data processing—primer validation, quality filtering, taxonomic assignment—through a guided, visual interface.</p>
+            </div>
+          </div>
+          <div class="glass-card outline" style="margin-bottom: 16px;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">What file formats does Oceara accept?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text" style="color: var(--slate); margin-bottom: 0;">Oceara accepts FASTQ files from all major DNA sequencing platforms including Illumina, PacBio, and Oxford Nanopore. Both single-end and paired-end sequencing data are supported, along with multiplexed samples using common eDNA primers like COI, 12S, and 18S.</p>
+            </div>
+          </div>
+          <div class="glass-card outline" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">How accurate is eDNA species detection?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text" style="color: var(--slate); margin-bottom: 0;">eDNA species detection is highly sensitive—often detecting species at lower population densities than traditional survey methods. Oceara provides confidence scores for each detection based on sequence quality, read depth, and reference database matches, so you can evaluate detection reliability for every species identified.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div>
+          <h2>Transform Your Biodiversity Monitoring</h2>
+          <p>Join conservation labs and environmental agencies using Oceara to accelerate species detection, track invasive species, and protect aquatic ecosystems.</p>
+        </div>
+        <a href="pilot.html" class="btn primary">Request a pilot</a>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div>
+        <div class="logo">
+          <span class="logo-mark" role="img" aria-label="Oceara logo"></span>
+          <span class="logo-text">Oceara</span>
+        </div>
+        <p>No-code eDNA bioinformatics for conservation teams, coastal agencies, and everyone who protects aquatic ecosystems.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="security.html">Security</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="api.html">API</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>
