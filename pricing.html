@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pricing | Oceara</title>
-    <meta
-      name="description"
-      content="Transparent pricing for Oceara's ocean conservation and eDNA analysis platform. Plans for individuals, research teams, and enterprises." />
-    <meta name="keywords" content="Oceara pricing, eDNA analysis pricing, ocean conservation platform pricing, marine research software" />
+    <title>Pricing | Oceara — Automated eDNA Bioinformatics</title>
+    <meta name="description" content="Simple, transparent pricing for automated eDNA metabarcoding analysis. From free exploration to enterprise-scale biodiversity monitoring." />
+    <meta name="keywords" content="eDNA pricing, metabarcoding cost, bioinformatics pricing, species detection pricing" />
     <link rel="canonical" href="https://oceara.io/pricing.html" />
 
     <!-- Favicon -->
@@ -18,18 +16,15 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Pricing | Oceara" />
-    <meta property="og:description" content="Simple, transparent pricing for teams of all sizes. Explore Oceara's plans for ocean conservation and eDNA analysis." />
+    <meta property="og:description" content="Simple, transparent pricing for automated eDNA metabarcoding analysis." />
     <meta property="og:url" content="https://oceara.io/pricing.html" />
     <meta property="og:site_name" content="Oceara" />
     <meta property="og:image" content="https://oceara.io/og-image.svg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pricing | Oceara" />
-    <meta name="twitter:description" content="Find the right plan for your ocean conservation and eDNA analysis needs." />
-    <meta name="twitter:image" content="https://oceara.io/og-image.svg" />
+    <meta name="twitter:description" content="Simple, transparent pricing for automated eDNA metabarcoding analysis." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,42 +37,45 @@
         --ocean-blue: #00A5E0;
         --seafoam: #00D4AA;
         --sky-tide: #7DD3E8;
-        --white: #f9feff;
         --ink: #0A2540;
         --slate: #4A6178;
         --mist: #F8FBFD;
+        --white: #f9feff;
+        --muted: rgba(10, 37, 64, 0.7);
         --glass: rgba(255, 255, 255, 0.72);
         --shadow: 0 24px 60px rgba(10, 37, 64, 0.25);
         --radius-xl: 32px;
         --radius-lg: 24px;
         --radius-md: 18px;
+        --radius-sm: 12px;
+        --emerald: #10B981;
       }
 
-      * { box-sizing: border-box; }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
+      }
 
       body {
-        margin: 0;
         font-family: "Inter", "Segoe UI", sans-serif;
         color: var(--ink);
         background: radial-gradient(circle at top, rgba(10, 37, 64, 0.12), transparent 55%),
           radial-gradient(circle at 10% 30%, rgba(0, 165, 224, 0.18), transparent 45%),
           radial-gradient(circle at 80% 20%, rgba(0, 212, 170, 0.2), transparent 45%),
-          #f8fbfd;
+          #f6fbff;
         min-height: 100vh;
         overflow-x: hidden;
+        line-height: 1.6;
       }
 
       a { color: inherit; text-decoration: none; }
       a:hover { color: var(--ocean-blue); }
 
-      main {
-        display: flex;
-        flex-direction: column;
-        gap: 80px;
-        padding: 40px 6vw 80px;
-      }
-
-      .ocean { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
+      /* Ocean background */
+      .ocean { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
       .orb {
         position: absolute;
         border-radius: 50%;
@@ -120,9 +118,18 @@
         background-size: 80px 80px; opacity: 0.2; mix-blend-mode: multiply;
       }
 
+      @keyframes drift {
+        0%, 100% { transform: translate3d(0, 0, 0); }
+        50% { transform: translate3d(30px, -20px, 0); }
+      }
+      @keyframes wave { 0% { transform: translateX(0); } 100% { transform: translateX(12%); } }
+
+      /* Nav */
       .nav {
         display: flex; align-items: center; justify-content: space-between;
         gap: 24px; padding: 28px 6vw 10px;
+        position: relative;
+        z-index: 100;
       }
       .logo { display: flex; align-items: center; gap: 12px; font-weight: 600; }
       .logo-mark {
@@ -133,178 +140,605 @@
         background-position: center;
       }
       .logo-text { font-size: 1.1rem; letter-spacing: 0.4px; }
-      .nav-links { display: flex; gap: 22px; font-weight: 500; color: var(--slate); }
+      .nav-links { display: flex; gap: 22px; font-weight: 500; color: var(--muted); }
+      .nav-links a.active { color: var(--ocean-blue); }
       .nav-actions { display: flex; gap: 12px; }
 
       .btn {
         border: none; border-radius: 999px;
         padding: 12px 20px; font-weight: 600; font-size: 0.95rem;
         cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
       }
       .btn.primary {
         background: linear-gradient(120deg, var(--ocean-blue), var(--seafoam));
         color: #fff; box-shadow: 0 16px 30px rgba(0, 165, 224, 0.3);
       }
       .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 165, 224, 0.35); }
-      .btn.secondary {
-        background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(10, 37, 64, 0.2); color: var(--ink);
-        transition: background-color 0.2s ease;
-      }
-      .btn.secondary:hover {
-        background: rgba(255, 255, 255, 0.9);
-        transform: translateY(-2px);
-      }
       .btn.ghost { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(10, 37, 64, 0.2); color: var(--ink); }
+      .btn.ghost:hover { background: rgba(255, 255, 255, 0.9); }
+      .btn.dark {
+        background: var(--deep-ocean);
+        color: #fff;
+      }
+      .btn.dark:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(10, 37, 64, 0.3); }
 
+      /* Main content */
+      main {
+        padding: 40px 6vw 80px;
+      }
+
+      /* Hero */
       .hero {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 40px; align-items: center;
+        text-align: center;
+        padding: 20px 0 40px;
       }
       .hero h1 {
         font-family: "Source Serif 4", serif;
-        font-size: clamp(2.5rem, 3.6vw, 4rem);
-        line-height: 1.05; margin: 18px 0;
+        font-size: clamp(2rem, 3.6vw, 3.2rem);
+        line-height: 1.15;
+        margin: 0 auto 20px;
+        max-width: 800px;
       }
-      .kicker { text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; color: var(--deep-ocean); font-weight: 600; }
-      .hero-subtitle { color: var(--slate); font-size: 1.05rem; max-width: 560px; line-height: 1.6; }
-      .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 28px 0 24px; }
+      .kicker {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.75rem;
+        color: var(--ocean-blue);
+        font-weight: 600;
+        margin-bottom: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .hero-subtitle {
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 640px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
 
+      /* Billing toggle */
+      .billing-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .billing-toggle span {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .billing-toggle span.active-label {
+        color: var(--ink);
+      }
+      .toggle-track {
+        position: relative;
+        width: 48px;
+        height: 26px;
+        background: rgba(10, 37, 64, 0.2);
+        border-radius: 13px;
+        cursor: pointer;
+        transition: background 0.25s;
+      }
+      .toggle-track.annual {
+        background: linear-gradient(120deg, var(--ocean-blue), var(--seafoam));
+      }
+      .toggle-thumb {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        background: var(--white);
+        border-radius: 50%;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 6px rgba(10, 37, 64, 0.2);
+      }
+      .toggle-track.annual .toggle-thumb {
+        transform: translateX(22px);
+      }
+      .save-badge {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--emerald);
+        background: rgba(16, 185, 129, 0.12);
+        padding: 4px 12px;
+        border-radius: 100px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .save-badge.visible {
+        opacity: 1;
+      }
+
+      /* Pricing grid */
+      .pricing-section {
+        padding: 48px 0;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
       .pricing-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 28px;
-        margin-bottom: 40px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        align-items: start;
+      }
+      @media (max-width: 1080px) {
+        .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 640px) {
+        .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
       }
 
-      .pricing-card {
+      /* Glass cards */
+      .glass-card {
         background: var(--glass);
-        border-radius: var(--radius-xl);
-        padding: 32px;
+        border-radius: var(--radius-lg);
+        padding: 28px;
         box-shadow: var(--shadow);
-        border: 1px solid rgba(10, 37, 64, 0.12);
+        border: 1px solid rgba(10, 37, 64, 0.1);
         backdrop-filter: blur(20px);
         display: flex;
         flex-direction: column;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.2s, box-shadow 0.2s;
         position: relative;
       }
-
-      .pricing-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 32px 80px rgba(0, 165, 224, 0.2);
+      .glass-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 32px 70px rgba(10, 37, 64, 0.2);
       }
-
-      .pricing-card.featured {
+      .glass-card.featured {
         border: 2px solid var(--ocean-blue);
-        background: rgba(255, 255, 255, 0.85);
-        transform: scale(1.05);
+        box-shadow: 0 0 0 1px var(--ocean-blue), 0 32px 70px rgba(0, 165, 224, 0.2);
+      }
+      .glass-card.featured:hover {
+        box-shadow: 0 0 0 1px var(--ocean-blue), 0 40px 80px rgba(0, 165, 224, 0.25);
       }
 
-      .pricing-card.featured:hover {
-        transform: scale(1.05) translateY(-8px);
-      }
-
-      .pricing-badge {
+      .card-badge {
         position: absolute;
         top: -12px;
-        right: 20px;
-        padding: 6px 16px;
-        background: linear-gradient(120deg, var(--ocean-blue), var(--seafoam));
-        color: #fff;
-        border-radius: 999px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.7rem;
         font-weight: 600;
-        font-size: 0.75rem;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        color: var(--white);
+        background: linear-gradient(120deg, var(--ocean-blue), var(--seafoam));
+        padding: 5px 16px;
+        border-radius: 100px;
+        white-space: nowrap;
       }
-
-      .pricing-tier { margin: 0; font-size: 1.2rem; font-weight: 600; color: var(--deep-ocean); }
-
-      .pricing-price {
-        font-family: "Source Serif 4", serif;
-        font-size: 2.8rem;
+      .card-tier {
+        font-size: 0.8rem;
         font-weight: 600;
-        color: var(--ocean-blue);
-        margin: 12px 0 4px;
-      }
-
-      .pricing-period {
-        color: var(--slate);
-        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
         margin-bottom: 4px;
       }
+      .card-name {
+        font-family: "Source Serif 4", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+      .card-desc {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.55;
+        margin-bottom: 20px;
+        min-height: 50px;
+      }
 
-      .pricing-description {
+      /* Price display */
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        margin-bottom: 4px;
+      }
+      .price-currency {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--ink);
+        align-self: flex-start;
+        margin-top: 8px;
+      }
+      .price-amount {
+        font-family: "Source Serif 4", serif;
+        font-size: 3.2rem;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+      .price-period {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: var(--muted);
+      }
+      .price-free {
+        font-family: "Source Serif 4", serif;
+        font-size: 3.2rem;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+      .price-custom {
+        font-family: "Source Serif 4", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+        line-height: 1;
+        padding: 10px 0;
+      }
+      .price-subtext {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 20px;
+        min-height: 20px;
+      }
+      .price-subtext s {
         color: var(--slate);
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin: 20px 0 24px;
+        text-decoration: line-through;
+        margin-right: 4px;
+      }
+
+      /* Samples pill */
+      .samples-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Inter", monospace;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--ocean-blue);
+        background: rgba(0, 165, 224, 0.08);
+        border: 1px solid rgba(0, 165, 224, 0.2);
+        padding: 8px 14px;
+        border-radius: var(--radius-sm);
+        margin-bottom: 20px;
+      }
+      .samples-pill svg {
+        flex-shrink: 0;
+      }
+
+      /* Feature list */
+      .feature-list {
+        list-style: none;
+        margin-bottom: 24px;
         flex-grow: 1;
       }
-
-      .pricing-features {
-        list-style: none;
-        padding: 0;
-        margin: 24px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .pricing-features li {
-        padding-left: 24px;
-        position: relative;
+      .feature-list li {
+        font-size: 0.9rem;
         color: var(--slate);
-        font-size: 0.95rem;
-        line-height: 1.5;
+        padding: 8px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.45;
+      }
+      .feature-list li svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .feature-list li.disabled {
+        color: var(--muted);
+        opacity: 0.6;
+      }
+      .check-icon {
+        color: var(--ocean-blue);
+      }
+      .dash-icon {
+        color: rgba(10, 37, 64, 0.25);
       }
 
-      .pricing-features li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 6px;
-        width: 12px;
-        height: 12px;
-        background: var(--seafoam);
-        border-radius: 50%;
-      }
-
-      .pricing-cta {
-        margin-top: auto;
-        padding-top: 24px;
-      }
-
-      .pricing-cta .btn {
+      /* Card CTA */
+      .card-cta {
         width: 100%;
         text-align: center;
-      }
-
-      .pricing-note {
-        text-align: center;
-        color: var(--slate);
+        padding: 14px 20px;
+        border-radius: 999px;
+        font-family: "Inter", sans-serif;
         font-size: 0.95rem;
-        line-height: 1.6;
-        padding: 32px 20px;
-        background: rgba(255, 255, 255, 0.5);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        display: block;
+        border: none;
+      }
+      .card-cta-primary {
+        background: linear-gradient(120deg, var(--ocean-blue), var(--seafoam));
+        color: var(--white);
+        box-shadow: 0 12px 24px rgba(0, 165, 224, 0.25);
+      }
+      .card-cta-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 32px rgba(0, 165, 224, 0.3);
+      }
+      .card-cta-secondary {
+        background: rgba(255, 255, 255, 0.8);
+        color: var(--ocean-blue);
+        border: 1px solid rgba(0, 165, 224, 0.3);
+      }
+      .card-cta-secondary:hover {
+        background: rgba(255, 255, 255, 1);
+        border-color: var(--ocean-blue);
+      }
+      .card-cta-dark {
+        background: var(--deep-ocean);
+        color: var(--white);
+      }
+      .card-cta-dark:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(10, 37, 64, 0.25);
+      }
+
+      /* Economics section */
+      .economics-section {
+        padding: 48px 0;
+      }
+      .economics-card {
+        max-width: 960px;
+        margin: 0 auto;
+        background: var(--glass);
+        border: 1px solid rgba(10, 37, 64, 0.1);
+        border-radius: var(--radius-xl);
+        padding: 40px 32px;
+        backdrop-filter: blur(20px);
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr 1px 1fr;
+        gap: 32px;
+        align-items: center;
+      }
+      @media (max-width: 720px) {
+        .economics-card {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          text-align: center;
+        }
+        .econ-divider { display: none; }
+      }
+      .econ-divider {
+        width: 1px;
+        height: 48px;
+        background: rgba(10, 37, 64, 0.12);
+      }
+      .econ-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .econ-number {
+        font-family: "Source Serif 4", serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      .econ-number span {
+        color: var(--ocean-blue);
+      }
+      .econ-label {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+
+      /* Comparison table */
+      .comparison-section {
+        padding: 64px 0 48px;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .comparison-section h2 {
+        font-family: "Source Serif 4", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--ink);
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .comparison-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: var(--glass);
+        border: 1px solid rgba(10, 37, 64, 0.1);
         border-radius: var(--radius-lg);
-        border: 1px solid rgba(10, 37, 64, 0.08);
+        backdrop-filter: blur(20px);
+      }
+      .comparison-table {
+        width: 100%;
+        min-width: 720px;
+        border-collapse: collapse;
+      }
+      .comparison-table thead th {
+        background: rgba(10, 37, 64, 0.04);
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--ink);
+        text-align: center;
+        padding: 16px 20px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+      }
+      .comparison-table thead th:first-child {
+        text-align: left;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .comparison-table thead th.highlight {
+        background: rgba(0, 165, 224, 0.08);
+        color: var(--ocean-blue);
+      }
+      .comparison-table tbody td {
+        font-size: 0.9rem;
+        color: var(--slate);
+        text-align: center;
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(10, 37, 64, 0.06);
+      }
+      .comparison-table tbody td:first-child {
+        text-align: left;
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .comparison-table tbody td.highlight {
+        background: rgba(0, 165, 224, 0.04);
+      }
+      .comparison-table .group-header td {
+        background: rgba(10, 37, 64, 0.03);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding: 12px 20px;
+      }
+      .comparison-table .group-header td.highlight {
+        background: rgba(0, 165, 224, 0.03);
+      }
+      .tbl-check {
+        color: var(--ocean-blue);
+      }
+      .tbl-dash {
+        color: rgba(10, 37, 64, 0.2);
+      }
+      .tbl-text {
+        font-family: "Inter", monospace;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--ink);
       }
 
-      .spectrum {
-        margin: 18px 0 20px; height: 10px; border-radius: 999px;
-        background: linear-gradient(90deg, var(--deep-ocean), var(--ocean-blue), var(--sky-tide), var(--seafoam));
-        position: relative; overflow: hidden;
+      /* FAQ */
+      .faq-section {
+        padding: 48px 0 64px;
+        max-width: 760px;
+        margin: 0 auto;
       }
-      .spectrum::after {
-        content: ""; position: absolute; inset: 0;
-        background: linear-gradient(120deg, transparent 10%, rgba(255, 255, 255, 0.7), transparent 70%);
-        transform: translateX(-100%); animation: shimmer 4s ease-in-out infinite;
+      .faq-section h2 {
+        font-family: "Source Serif 4", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--ink);
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .faq-item {
+        border-bottom: 1px solid rgba(10, 37, 64, 0.1);
+      }
+      .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--ink);
+        text-align: left;
+        padding: 22px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        transition: color 0.15s;
+      }
+      .faq-question:hover {
+        color: var(--ocean-blue);
+      }
+      .faq-chevron {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        color: var(--muted);
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .faq-item.open .faq-chevron {
+        transform: rotate(180deg);
+      }
+      .faq-answer {
+        font-size: 0.95rem;
+        color: var(--slate);
+        line-height: 1.7;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s;
+        padding: 0;
+      }
+      .faq-item.open .faq-answer {
+        max-height: 320px;
+        padding: 0 0 22px 0;
       }
 
-      .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 40px 6vw 60px; color: var(--slate); }
-      .footer-links { display: flex; gap: 16px; }
+      /* CTA section */
+      .cta-section {
+        padding: 48px 0 64px;
+        text-align: center;
+      }
+      .cta-card {
+        background: var(--glass);
+        border: 1px solid rgba(10, 37, 64, 0.1);
+        border-radius: var(--radius-xl);
+        padding: 48px 32px;
+        backdrop-filter: blur(20px);
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .cta-section h2 {
+        font-family: "Source Serif 4", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 12px;
+      }
+      .cta-section p {
+        font-size: 1rem;
+        color: var(--muted);
+        margin-bottom: 28px;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.65;
+      }
+      .cta-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
 
+      /* Footer */
+      .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 40px 6vw 60px;
+        color: var(--muted);
+      }
+      .footer-links {
+        display: flex;
+        gap: 16px;
+      }
+
+      /* Screen reader only */
       .sr-only {
         position: absolute;
         width: 1px;
@@ -317,30 +751,36 @@
         border: 0;
       }
 
-      @keyframes drift {
-        0%, 100% { transform: translate3d(0, 0, 0); }
-        50% { transform: translate3d(30px, -20px, 0); }
+      /* Mobile nav */
+      .nav-hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        color: var(--ink);
       }
-      @keyframes wave { 0% { transform: translateX(0); } 100% { transform: translateX(12%); } }
-      @keyframes shimmer {
-        0% { transform: translateX(-100%); }
-        50% { transform: translateX(80%); }
-        100% { transform: translateX(150%); }
+      @media (max-width: 860px) {
+        .nav-links { display: none; }
+        .nav-actions .btn.ghost { display: none; }
+        .nav-hamburger { display: block; }
+        .hero h1 { font-size: 1.8rem; }
+        .footer { justify-content: center; text-align: center; flex-direction: column; align-items: center; }
       }
 
-      @media (max-width: 768px) {
-        .pricing-card.featured {
-          transform: scale(1);
-        }
-
-        .pricing-card.featured:hover {
-          transform: scale(1) translateY(-8px);
-        }
-
-        .pricing-grid {
-          grid-template-columns: 1fr;
-        }
+      /* Animations */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
+      .animate-in {
+        animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+      }
+      .delay-1 { animation-delay: 0.1s; }
+      .delay-2 { animation-delay: 0.2s; }
+      .delay-3 { animation-delay: 0.3s; }
+      .delay-4 { animation-delay: 0.4s; }
     </style>
   </head>
   <body>
@@ -355,99 +795,483 @@
     </div>
 
     <header class="nav" role="banner">
-      <a href="/" class="logo" aria-label="Oceara - Ocean conservation home">
+      <a href="/" class="logo" aria-label="Oceara - Environmental DNA platform home">
         <span class="logo-mark" role="img" aria-hidden="true"></span>
         <span class="logo-text">Oceara</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/#platform">Platform</a>
+        <a href="/#workflow">Features</a>
+        <a href="/#science">How It Works</a>
+        <a href="/pricing.html" class="active">Pricing</a>
+        <a href="/#faq">FAQ</a>
       </nav>
       <div class="nav-actions">
         <a href="https://app.oceara.io/login" class="btn ghost">Sign in</a>
-        <button class="btn primary">Book a demo</button>
+        <a href="/demo.html" class="btn primary">Book a demo</a>
       </div>
+      <button class="nav-hamburger" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </header>
 
     <main>
-      <section class="hero" id="pricing">
-        <div>
-          <p class="kicker">Simple, Transparent Pricing</p>
-          <h1>Pricing</h1>
-          <p class="hero-subtitle">
-            Simple, transparent pricing for teams of all sizes.
+      <!-- Hero -->
+      <section class="hero">
+        <div class="animate-in">
+          <p class="kicker">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26z"/></svg>
+            Simple, transparent pricing
           </p>
         </div>
+        <h1 class="animate-in delay-1">From FASTQ to species report.<br>Pick the plan that fits your research.</h1>
+        <p class="hero-subtitle animate-in delay-2">Containerized fastp → DADA2 → multi-method taxonomy pipeline. Consensus scoring, ecological plausibility filtering, and structured reporting — from demultiplexed reads to species-level assignments.</p>
+
+        <!-- Billing toggle -->
+        <div class="billing-toggle animate-in delay-3">
+          <span class="active-label" id="monthlyLabel">Monthly</span>
+          <div class="toggle-track" id="billingToggle" role="switch" aria-checked="false" tabindex="0">
+            <div class="toggle-thumb"></div>
+          </div>
+          <span id="annualLabel">Annual</span>
+          <div class="save-badge" id="saveBadge">Save 20%</div>
+        </div>
       </section>
 
-      <section>
-        <h2 class="sr-only">Pricing Plans</h2>
+      <!-- Pricing Cards -->
+      <section class="pricing-section">
         <div class="pricing-grid">
-          <!-- Starter Plan -->
-          <div class="pricing-card">
-            <h3 class="pricing-tier">Starter</h3>
-            <div class="pricing-price">Free</div>
-            <p class="pricing-description">For individuals exploring eDNA analysis</p>
-
-            <ul class="pricing-features">
-              <li>5 samples/month</li>
-              <li>Basic reports</li>
-              <li>Community support</li>
-              <li>Single user</li>
-            </ul>
-
-            <div class="pricing-cta">
-              <button class="btn secondary">Get Started</button>
+          <!-- EXPLORER -->
+          <div class="glass-card animate-in delay-1">
+            <div class="card-tier">Explorer</div>
+            <div class="card-name">Free</div>
+            <div class="card-desc">Evaluate the pipeline on your own data. QC and ASV inference included.</div>
+            <div class="price-row">
+              <span class="price-free">$0</span>
             </div>
+            <div class="price-subtext">Free forever</div>
+            <div class="samples-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+              3 samples / month
+            </div>
+            <ul class="feature-list">
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                QC filtering (fastp, Q20 threshold)
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                ASV inference + chimera removal (DADA2)
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                ASV table + read counts (CSV export)
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                QC metrics (pass rate, Q30, adapter %)
+              </li>
+              <li class="disabled">
+                <svg class="dash-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Taxonomy assignment
+              </li>
+              <li class="disabled">
+                <svg class="dash-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Consensus scoring + reports
+              </li>
+            </ul>
+            <a href="https://app.oceara.io/signup" class="card-cta card-cta-secondary">Get started free</a>
           </div>
 
-          <!-- Professional Plan -->
-          <div class="pricing-card featured">
-            <div class="pricing-badge">Most Popular</div>
-            <h3 class="pricing-tier">Professional</h3>
-            <div class="pricing-price">$99</div>
-            <p class="pricing-period">/month</p>
-            <p class="pricing-description">For growing research teams</p>
-
-            <ul class="pricing-features">
-              <li>100 samples/month</li>
-              <li>Advanced reports</li>
-              <li>Priority support</li>
-              <li>Up to 5 users</li>
-              <li>API access</li>
-            </ul>
-
-            <div class="pricing-cta">
-              <button class="btn primary">Start free trial</button>
+          <!-- RESEARCHER — featured -->
+          <div class="glass-card featured animate-in delay-2">
+            <div class="card-badge">Most popular</div>
+            <div class="card-tier">Researcher</div>
+            <div class="card-name">Pro</div>
+            <div class="card-desc">Full taxonomy pipeline with multi-method consensus and ecological plausibility filtering.</div>
+            <div class="price-row">
+              <span class="price-currency">$</span>
+              <span class="price-amount" data-monthly="49" data-annual="39">49</span>
+              <span class="price-period">/ mo</span>
             </div>
+            <div class="price-subtext" data-monthly="" data-annual="$468 billed annually"><span></span></div>
+            <div class="samples-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+              25 samples / month
+            </div>
+            <ul class="feature-list">
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Everything in Explorer
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                BLAST+ (NCBI nt) + Naive Bayes + BOLD
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Multi-method consensus scoring (0–100)
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Ecological plausibility filtering (GBIF)
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Narrative interpretation + discovery flags
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                PDF + CSV export
+              </li>
+            </ul>
+            <a href="https://app.oceara.io/signup?plan=researcher" class="card-cta card-cta-primary">Start 14-day free trial</a>
           </div>
 
-          <!-- Enterprise Plan -->
-          <div class="pricing-card">
-            <h3 class="pricing-tier">Enterprise</h3>
-            <div class="pricing-price">Custom</div>
-            <p class="pricing-description">For large organizations</p>
-
-            <ul class="pricing-features">
-              <li>Unlimited samples</li>
-              <li>Custom integrations</li>
-              <li>Dedicated support</li>
-              <li>Unlimited users</li>
-              <li>SLA guarantee</li>
-              <li>On-premise option</li>
-            </ul>
-
-            <div class="pricing-cta">
-              <button class="btn secondary">Contact sales</button>
+          <!-- LAB -->
+          <div class="glass-card animate-in delay-3">
+            <div class="card-tier">Lab</div>
+            <div class="card-name">Team</div>
+            <div class="card-desc">Production-scale metabarcoding for core facilities and consulting teams.</div>
+            <div class="price-row">
+              <span class="price-currency">$</span>
+              <span class="price-amount" data-monthly="199" data-annual="159">199</span>
+              <span class="price-period">/ mo</span>
             </div>
+            <div class="price-subtext" data-monthly="" data-annual="$1,908 billed annually"><span></span></div>
+            <div class="samples-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+              150 samples / month
+            </div>
+            <ul class="feature-list">
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Everything in Researcher
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority processing queue
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                API access (REST + webhooks)
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Team seats (up to 5)
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Batch upload
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Branded PDF reports
+              </li>
+            </ul>
+            <a href="https://app.oceara.io/signup?plan=lab" class="card-cta card-cta-secondary">Start 14-day free trial</a>
+          </div>
+
+          <!-- ENTERPRISE -->
+          <div class="glass-card animate-in delay-4">
+            <div class="card-tier">Enterprise</div>
+            <div class="card-name">Custom</div>
+            <div class="card-desc">Dedicated infrastructure for government programs, monitoring networks, and white-label deployments.</div>
+            <div class="price-row">
+              <span class="price-custom">Let's talk</span>
+            </div>
+            <div class="price-subtext">Custom volume pricing</div>
+            <div class="samples-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Unlimited samples
+            </div>
+            <ul class="feature-list">
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Everything in Lab
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                White-label reports + dashboard
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom reference databases
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                SSO + role-based access
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Dedicated support + SLA
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Unlimited team seats
+              </li>
+            </ul>
+            <a href="mailto:hello@oceara.io?subject=Enterprise%20inquiry" class="card-cta card-cta-dark">Contact sales</a>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="pricing-note">
-          <p><strong>All plans include a 14-day free trial. No credit card required.</strong></p>
+      <!-- Cost Comparison -->
+      <section class="economics-section">
+        <div class="economics-card">
+          <div class="econ-stat">
+            <div class="econ-number"><span>&lt;</span> 6 min</div>
+            <div class="econ-label">Average processing time per sample</div>
+          </div>
+          <div class="econ-divider"></div>
+          <div class="econ-stat">
+            <div class="econ-number">4–6 <span>wk</span></div>
+            <div class="econ-label">Typical commercial lab turnaround</div>
+          </div>
+          <div class="econ-divider"></div>
+          <div class="econ-stat">
+            <div class="econ-number">$95–420</div>
+            <div class="econ-label">Per-sample cost at commercial labs</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison Table -->
+      <section class="comparison-section">
+        <h2>Compare plans</h2>
+        <div class="comparison-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Explorer</th>
+                <th class="highlight">Researcher</th>
+                <th>Lab</th>
+                <th>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Pipeline -->
+              <tr class="group-header">
+                <td colspan="1">Bioinformatics Pipeline</td>
+                <td></td>
+                <td class="highlight"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Samples per month</td>
+                <td class="tbl-text">3</td>
+                <td class="tbl-text highlight">25</td>
+                <td class="tbl-text">150</td>
+                <td class="tbl-text">Unlimited</td>
+              </tr>
+              <tr>
+                <td>QC + adapter trimming (fastp)</td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>ASV inference + chimera removal (DADA2)</td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>BLAST+ sequence similarity (NCBI nt)</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>Naive Bayes classifier + BOLD Systems</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>Multi-method consensus scoring</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <!-- Interpretation & Reporting -->
+              <tr class="group-header">
+                <td colspan="1">Interpretation & Reporting</td>
+                <td></td>
+                <td class="highlight"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Ecological plausibility filtering (GBIF)</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>Narrative interpretation + species context</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>Discovery detection (range extensions, novel records)</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>PDF report export</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>Branded / white-label reports</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <!-- Infrastructure -->
+              <tr class="group-header">
+                <td colspan="1">Infrastructure</td>
+                <td></td>
+                <td class="highlight"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Interactive dashboard</td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td class="highlight"><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>Batch upload</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>API access</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>Team seats</td>
+                <td class="tbl-text">1</td>
+                <td class="tbl-text highlight">1</td>
+                <td class="tbl-text">5</td>
+                <td class="tbl-text">Unlimited</td>
+              </tr>
+              <tr>
+                <td>Custom reference databases</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>SSO + role-based access</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td>Dedicated support + SLA</td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td class="highlight"><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-dash" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></td>
+                <td><svg class="tbl-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-item">
+          <button class="faq-question">
+            What counts as one sample?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">One sample = one pair of demultiplexed, gzipped FASTQ files (R1 + R2) from a single extraction or collection event. If you upload paired-end reads from one library, that counts as one sample. Multiplexed runs should be demultiplexed prior to upload. Single-end submissions are supported but paired-end is recommended for DADA2 merge quality.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do unused samples roll over?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Unused samples do not roll over between billing periods. If you have seasonal spikes, the Lab plan's 150-sample allocation accommodates most batch processing needs. Enterprise customers can negotiate flexible volume commitments.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Which markers and primers are supported?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Oceara supports amplicon-based metabarcoding for COI (Leray/mlCOI), 12S rRNA (MiFish-U/E), 16S rRNA (515F/806R), and 18S rRNA (V4/V9 regions) from Illumina paired-end sequencing (2×150 to 2×300 bp). Oxford Nanopore amplicon data is supported in beta. Primer trimming parameters are auto-detected or user-configurable. Additional markers are being added based on demand.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What does "multi-method taxonomy" mean?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Researcher and higher plans run three independent classification algorithms in parallel — BLAST+ sequence similarity against NCBI nt, Naive Bayes probabilistic classification (trained per-marker), and BOLD barcode database matching for COI. When methods produce conflicting assignments, the consensus engine evaluates percent identity, bootstrap support, and lowest common ancestor across all three and assigns a composite confidence score (0–100). This multi-method approach reduces false positives that any single classifier would propagate.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I try a paid plan before committing?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Yes. Researcher and Lab plans include a 14-day free trial with full access to all features. No credit card required to start. You can also begin on the free Explorer plan and upgrade when ready.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How does Oceara handle data security?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">All data is transmitted over TLS 1.3 and encrypted at rest (AES-256). FASTQ files are processed in ephemeral containerized environments on Modal that are destroyed after pipeline completion — no sequence data persists on compute nodes. Results are stored in tenant-isolated Postgres partitions with row-level security policies. Sequence data is purged after your configured retention window. SOC 2 compliance is on the roadmap.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer academic or nonprofit discounts?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Yes. We offer discounted rates for academic institutions and registered conservation nonprofits. Contact us at hello@oceara.io with your institutional details for a custom quote.</div>
+        </div>
+      </section>
+
+      <!-- Bottom CTA -->
+      <section class="cta-section">
+        <div class="cta-card">
+          <h2>Not sure which plan fits your workflow?</h2>
+          <p>Send us a representative FASTQ pair. We'll process it through the full pipeline and walk you through the output — no commitment.</p>
+          <div class="cta-buttons">
+            <a href="/demo.html" class="btn primary">
+              Book a demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="mailto:hello@oceara.io" class="btn ghost">Contact us</a>
+          </div>
         </div>
       </section>
     </main>
@@ -458,11 +1282,82 @@
           <span class="logo-mark" role="img" aria-label="Oceara logo"></span>
           <span class="logo-text">Oceara</span>
         </div>
-        <p>Ocean conservation platform for research teams, marine agencies, and everyone who protects our oceans.</p>
+        <p>No-code eDNA bioinformatics for conservation teams, coastal agencies, and everyone who protects aquatic ecosystems.</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#">Security</a><a href="#">Documentation</a><a href="#">API</a><a href="#">Contact</a>
+        <a href="/security.html">Security</a>
+        <a href="/documentation.html">Documentation</a>
+        <a href="/api.html">API</a>
+        <a href="mailto:hello@oceara.io">Contact</a>
       </nav>
     </footer>
+
+    <script>
+      // Billing toggle
+      const toggle = document.getElementById('billingToggle');
+      const monthlyLabel = document.getElementById('monthlyLabel');
+      const annualLabel = document.getElementById('annualLabel');
+      const saveBadge = document.getElementById('saveBadge');
+      let isAnnual = false;
+
+      function updatePricing() {
+        const amounts = document.querySelectorAll('.price-amount');
+        const subtexts = document.querySelectorAll('.price-subtext[data-monthly]');
+
+        amounts.forEach(el => {
+          const val = isAnnual ? el.dataset.annual : el.dataset.monthly;
+          if (val) el.textContent = val;
+        });
+
+        subtexts.forEach(el => {
+          const val = isAnnual ? el.dataset.annual : el.dataset.monthly;
+          const span = el.querySelector('span');
+          if (span) {
+            span.textContent = val || '';
+            if (isAnnual && val) {
+              const card = el.closest('.glass-card');
+              const priceAmount = card ? card.querySelector('.price-amount') : null;
+              if (priceAmount && priceAmount.dataset.monthly) {
+                span.innerHTML = '<s>$' + (parseInt(priceAmount.dataset.monthly) * 12) + '</s> ' + val;
+              }
+            }
+          }
+        });
+
+        toggle.classList.toggle('annual', isAnnual);
+        monthlyLabel.classList.toggle('active-label', !isAnnual);
+        annualLabel.classList.toggle('active-label', isAnnual);
+        saveBadge.classList.toggle('visible', isAnnual);
+      }
+
+      toggle.addEventListener('click', () => {
+        isAnnual = !isAnnual;
+        updatePricing();
+      });
+
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          isAnnual = !isAnnual;
+          updatePricing();
+        }
+      });
+
+      // FAQ accordion
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const wasOpen = item.classList.contains('open');
+          // Close all
+          document.querySelectorAll('.faq-item.open').forEach(el => {
+            el.classList.remove('open');
+          });
+          // Toggle clicked
+          if (!wasOpen) {
+            item.classList.add('open');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
