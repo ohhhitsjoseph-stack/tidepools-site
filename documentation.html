@@ -297,6 +297,160 @@
         border: 0;
       }
 
+      /* ===== Report Card Theme ===== */
+      .report-card {
+        background: rgba(255, 255, 255, 0.88);
+        border-radius: 24px;
+        padding: 36px 40px;
+        box-shadow:
+          0 4px 6px rgba(10, 37, 64, 0.04),
+          0 12px 40px rgba(10, 37, 64, 0.08);
+        border: 1px solid rgba(10, 37, 64, 0.06);
+        backdrop-filter: blur(24px);
+      }
+      .report-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .report-card-title {
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.45rem;
+        color: var(--deep-ocean);
+        letter-spacing: -0.3px;
+      }
+      .report-card-subtitle {
+        margin: 6px 0 0;
+        color: var(--slate);
+        font-size: 0.95rem;
+        font-weight: 400;
+      }
+      .report-status {
+        padding: 8px 20px;
+        border-radius: 999px;
+        background: rgba(0, 165, 224, 0.08);
+        color: var(--ocean-blue);
+        font-weight: 600;
+        font-size: 0.82rem;
+        border: 1px solid rgba(0, 165, 224, 0.15);
+        white-space: nowrap;
+      }
+      .report-progress-bar {
+        margin: 24px 0 28px;
+        height: 10px;
+        border-radius: 999px;
+        background: linear-gradient(90deg,
+          #0A2540 0%, #00638A 25%, #00A5E0 40%,
+          #7DD3E8 55%, #00D4AA 70%, #8FE8A0 85%, #C8F0B0 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .report-progress-bar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.5), transparent 80%);
+        transform: translateX(-100%);
+        animation: shimmer 3s ease-in-out infinite;
+      }
+      .report-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .report-metric {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 16px;
+        padding: 20px 22px;
+        border: 1px solid rgba(10, 37, 64, 0.06);
+        transition: box-shadow 0.2s ease;
+      }
+      .report-metric:hover {
+        box-shadow: 0 4px 16px rgba(10, 37, 64, 0.06);
+      }
+      .report-metric-label {
+        margin: 0;
+        font-size: 0.72rem;
+        color: var(--slate);
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        font-weight: 600;
+      }
+      .report-metric-value {
+        margin: 10px 0 6px;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--deep-ocean);
+        letter-spacing: -0.5px;
+      }
+      .report-metric-note {
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+      .report-metric-note.green { color: #2ECC71; }
+      .report-metric-note.teal { color: #00A5E0; }
+      .report-checklist {
+        margin-top: 28px;
+        display: grid;
+        gap: 14px;
+        font-size: 0.95rem;
+      }
+      .report-check-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--ink);
+      }
+      .report-check-item p { margin: 0; }
+      .report-check-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #8BC34A;
+        box-shadow: 0 0 0 4px rgba(139, 195, 74, 0.18);
+        flex-shrink: 0;
+      }
+      .report-features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 28px;
+      }
+      .report-feature-item {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 16px;
+        padding: 24px;
+        border: 1px solid rgba(10, 37, 64, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .report-feature-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(10, 37, 64, 0.08);
+      }
+      .report-feature-item h4 {
+        margin: 0 0 8px;
+        color: var(--deep-ocean);
+        font-size: 1rem;
+      }
+      .report-feature-item p {
+        margin: 0;
+        color: var(--slate);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 720px) {
+        .report-card { padding: 24px 20px; border-radius: 20px; }
+        .report-card-title { font-size: 1.2rem; }
+        .report-metrics { grid-template-columns: 1fr; gap: 12px; }
+        .report-metric-value { font-size: 1.4rem; }
+        .report-features-grid { grid-template-columns: 1fr; }
+      }
+
       @keyframes drift {
         0%, 100% { transform: translate3d(0, 0, 0); }
         50% { transform: translate3d(30px, -20px, 0); }
@@ -427,13 +581,60 @@
       </section>
 
       <section id="reports-and-sharing">
-        <div class="glass-card">
-          <h2>Reports and Sharing</h2>
-          <ul style="color: var(--muted); line-height: 1.8; padding-left: 22px;">
-            <li>Printable report view for field teams and stakeholders.</li>
-            <li>Sample chat to ask questions about results.</li>
-            <li>Dashboard status tracking for every sample.</li>
-          </ul>
+        <h2 style="text-align: center; margin-bottom: 24px;">Reports and Sharing</h2>
+
+        <!-- Live Report Preview -->
+        <div class="report-card" style="max-width: 720px; margin: 0 auto 28px;">
+          <div class="report-card-header">
+            <div>
+              <h3 class="report-card-title">Live Tide Scan</h3>
+              <p class="report-card-subtitle">Puget Sound - Zone 3</p>
+            </div>
+            <span class="report-status">Processing</span>
+          </div>
+          <div class="report-progress-bar"></div>
+          <div class="report-metrics">
+            <div class="report-metric">
+              <p class="report-metric-label">Species Detected</p>
+              <p class="report-metric-value">248</p>
+              <p class="report-metric-note green">+12 new</p>
+            </div>
+            <div class="report-metric">
+              <p class="report-metric-label">Read Depth</p>
+              <p class="report-metric-value">36.2M</p>
+              <p class="report-metric-note teal">Stable</p>
+            </div>
+            <div class="report-metric">
+              <p class="report-metric-label">Confidence</p>
+              <p class="report-metric-value">High</p>
+              <p class="report-metric-note teal">QC passed</p>
+            </div>
+          </div>
+          <div class="report-checklist">
+            <div class="report-check-item"><span class="report-check-dot"></span><p>Primer validation completed</p></div>
+            <div class="report-check-item"><span class="report-check-dot"></span><p>Contaminant filter applied</p></div>
+            <div class="report-check-item"><span class="report-check-dot"></span><p>Taxonomy normalized for report</p></div>
+          </div>
+        </div>
+
+        <!-- Report Features -->
+        <div class="report-features-grid" style="max-width: 720px; margin: 0 auto;">
+          <div class="report-feature-item">
+            <h4>Printable Reports</h4>
+            <p>Generate stakeholder-ready printable report views for field teams and conservation stakeholders.</p>
+          </div>
+          <div class="report-feature-item">
+            <h4>Sample Chat</h4>
+            <p>Ask questions about your results directly within the report using AI-powered sample chat.</p>
+          </div>
+          <div class="report-feature-item">
+            <h4>Dashboard Tracking</h4>
+            <p>Monitor processing status for every sample with live dashboard indicators and progress tracking.</p>
+          </div>
+          <div class="report-feature-item">
+            <h4>PDF Export</h4>
+            <p>Export conservation-ready PDF reports with species lists, confidence scores, and biodiversity maps.</p>
+          </div>
         </div>
       </section>
 

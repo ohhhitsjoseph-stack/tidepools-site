@@ -254,7 +254,160 @@
         color: var(--ocean-blue); font-weight: 600; font-size: 0.75rem;
       }
 
-      /* Spectrum Bar */
+      /* ===== Report Card Theme ===== */
+      .report-card {
+        background: rgba(255, 255, 255, 0.88);
+        border-radius: 24px;
+        padding: 36px 40px;
+        box-shadow:
+          0 4px 6px rgba(10, 37, 64, 0.04),
+          0 12px 40px rgba(10, 37, 64, 0.08);
+        border: 1px solid rgba(10, 37, 64, 0.06);
+        backdrop-filter: blur(24px);
+      }
+      .report-card-secondary {
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid rgba(0, 165, 224, 0.12);
+        margin-top: 20px;
+        padding: 28px 32px;
+      }
+      .report-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .report-card-title {
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.45rem;
+        color: var(--deep-ocean);
+        letter-spacing: -0.3px;
+      }
+      .report-card-subtitle {
+        margin: 6px 0 0;
+        color: var(--slate);
+        font-size: 0.95rem;
+        font-weight: 400;
+      }
+      .report-status {
+        padding: 8px 20px;
+        border-radius: 999px;
+        background: rgba(0, 165, 224, 0.08);
+        color: var(--ocean-blue);
+        font-weight: 600;
+        font-size: 0.82rem;
+        border: 1px solid rgba(0, 165, 224, 0.15);
+        white-space: nowrap;
+        letter-spacing: 0.2px;
+      }
+
+      /* Report Progress Bar */
+      .report-progress-bar {
+        margin: 24px 0 28px;
+        height: 10px;
+        border-radius: 999px;
+        background: linear-gradient(90deg,
+          #0A2540 0%,
+          #00638A 25%,
+          #00A5E0 40%,
+          #7DD3E8 55%,
+          #00D4AA 70%,
+          #8FE8A0 85%,
+          #C8F0B0 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .report-progress-bar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.5), transparent 80%);
+        transform: translateX(-100%);
+        animation: shimmer 3s ease-in-out infinite;
+      }
+
+      /* Report Metrics Grid */
+      .report-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .report-metric {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 16px;
+        padding: 20px 22px;
+        border: 1px solid rgba(10, 37, 64, 0.06);
+        transition: box-shadow 0.2s ease;
+      }
+      .report-metric:hover {
+        box-shadow: 0 4px 16px rgba(10, 37, 64, 0.06);
+      }
+      .report-metric-label {
+        margin: 0;
+        font-size: 0.72rem;
+        color: var(--slate);
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        font-weight: 600;
+      }
+      .report-metric-value {
+        margin: 10px 0 6px;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--deep-ocean);
+        letter-spacing: -0.5px;
+      }
+      .report-metric-note {
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+      .report-metric-note.green { color: #2ECC71; }
+      .report-metric-note.teal { color: #00A5E0; }
+
+      /* Report Checklist */
+      .report-checklist {
+        margin-top: 28px;
+        display: grid;
+        gap: 14px;
+        font-size: 0.95rem;
+      }
+      .report-check-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--ink);
+      }
+      .report-check-item p { margin: 0; }
+      .report-check-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #8BC34A;
+        box-shadow: 0 0 0 4px rgba(139, 195, 74, 0.18);
+        flex-shrink: 0;
+      }
+
+      /* Report Pills */
+      .report-pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .report-pill-row span {
+        padding: 9px 16px;
+        background: linear-gradient(135deg, rgba(0, 165, 224, 0.08), rgba(0, 212, 170, 0.1));
+        color: var(--deep-ocean);
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(0, 165, 224, 0.08);
+      }
+
+      /* Spectrum Bar (legacy) */
       .spectrum {
         margin: 20px 0 22px; height: 8px; border-radius: 999px;
         background: linear-gradient(90deg, var(--deep-ocean), var(--ocean-blue), var(--sky-tide), var(--seafoam));
@@ -266,7 +419,7 @@
         transform: translateX(-100%); animation: shimmer 3s ease-in-out infinite;
       }
 
-      /* Mini Cards Grid */
+      /* Mini Cards Grid (legacy) */
       .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
       .mini-card {
         background: rgba(255, 255, 255, 0.8);
@@ -278,7 +431,7 @@
       .mini-value { margin: 6px 0 4px; font-size: 1.3rem; font-weight: 700; color: var(--deep-ocean); }
       .mini-foot { margin: 0; color: var(--seafoam); font-size: 0.8rem; font-weight: 500; }
 
-      /* Timeline */
+      /* Timeline (legacy) */
       .timeline { margin-top: 20px; display: grid; gap: 10px; font-size: 0.9rem; }
       .timeline-row { display: flex; align-items: center; gap: 12px; color: var(--slate); }
       .timeline-row .dot {
@@ -287,7 +440,7 @@
         box-shadow: 0 0 0 4px rgba(0, 212, 170, 0.2);
       }
 
-      /* Pills */
+      /* Pills (legacy) */
       .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
       .pill-row span {
         padding: 8px 14px;
@@ -471,6 +624,14 @@
           padding: 20px;
           border-radius: 20px;
         }
+        .report-card {
+          padding: 24px 20px;
+          border-radius: 20px;
+        }
+        .report-card-title { font-size: 1.2rem; }
+        .report-metrics { grid-template-columns: 1fr; gap: 12px; }
+        .report-metric-value { font-size: 1.4rem; }
+        .report-checklist { gap: 12px; font-size: 0.9rem; }
         .card-grid { grid-template-columns: 1fr; gap: 16px; }
 
         /* Mobile Sections */
@@ -559,45 +720,45 @@
         </div>
 
         <div class="hero-showcase">
-          <div class="glass-card">
-            <div class="card-header">
+          <div class="report-card">
+            <div class="report-card-header">
               <div>
-                <p class="card-title">Live Ecosystem Scan</p>
-                <p class="card-subtitle">Puget Sound · Zone 3</p>
+                <h3 class="report-card-title">Live Tide Scan</h3>
+                <p class="report-card-subtitle">Puget Sound - Zone 3</p>
               </div>
-              <span class="status">Processing</span>
+              <span class="report-status">Processing</span>
             </div>
-            <div class="spectrum"></div>
-            <div class="card-grid">
-              <div class="mini-card">
-                <p class="mini-title">Species</p>
-                <p class="mini-value">248</p>
-                <p class="mini-foot">+12 new</p>
+            <div class="report-progress-bar"></div>
+            <div class="report-metrics">
+              <div class="report-metric">
+                <p class="report-metric-label">Species Detected</p>
+                <p class="report-metric-value">248</p>
+                <p class="report-metric-note green">+12 new</p>
               </div>
-              <div class="mini-card">
-                <p class="mini-title">Read depth</p>
-                <p class="mini-value">36.2M</p>
-                <p class="mini-foot">Stable</p>
+              <div class="report-metric">
+                <p class="report-metric-label">Read Depth</p>
+                <p class="report-metric-value">36.2M</p>
+                <p class="report-metric-note teal">Stable</p>
               </div>
-              <div class="mini-card">
-                <p class="mini-title">Confidence</p>
-                <p class="mini-value">High</p>
-                <p class="mini-foot">QC passed</p>
+              <div class="report-metric">
+                <p class="report-metric-label">Confidence</p>
+                <p class="report-metric-value">High</p>
+                <p class="report-metric-note teal">QC passed</p>
               </div>
             </div>
-            <div class="timeline">
-              <div class="timeline-row"><span class="dot"></span><p>Primer validation completed</p></div>
-              <div class="timeline-row"><span class="dot"></span><p>Contaminant filter applied</p></div>
-              <div class="timeline-row"><span class="dot"></span><p>Taxonomy normalized for report</p></div>
+            <div class="report-checklist">
+              <div class="report-check-item"><span class="report-check-dot"></span><p>Primer validation completed</p></div>
+              <div class="report-check-item"><span class="report-check-dot"></span><p>Contaminant filter applied</p></div>
+              <div class="report-check-item"><span class="report-check-dot"></span><p>Taxonomy normalized for report</p></div>
             </div>
           </div>
 
-          <div class="glass-card outline">
-            <p class="card-title">Explainable Species Detection</p>
-            <p class="card-subtitle">
+          <div class="report-card report-card-secondary">
+            <h3 class="report-card-title" style="font-size: 1.05rem;">Explainable Species Detection</h3>
+            <p class="report-card-subtitle">
               Every taxonomic assignment includes confidence scores, reference database citations, and export-ready conservation reports.
             </p>
-            <div class="pill-row">
+            <div class="report-pill-row">
               <span>Auto-generated narrative</span>
               <span>Biodiversity maps</span>
               <span>Conservation-ready PDF</span>
@@ -630,7 +791,7 @@
       </section>
 
       <section class="workflow" id="science" aria-labelledby="workflow-heading">
-        <div>
+        <div style="text-align: center; max-width: 680px; margin: 0 auto;">
           <p class="kicker">From water sample to species report</p>
           <h2 id="workflow-heading">Automated eDNA Metabarcoding in Three Steps</h2>
         </div>
@@ -649,6 +810,35 @@
             <span class="step-number">03</span>
             <h4>Biodiversity Reporting</h4>
             <p>Export stakeholder-ready reports: interactive species dashboards, conservation-ready PDFs, and GIS-compatible map layers—all with a single click.</p>
+          </div>
+        </div>
+
+        <!-- Report Preview Card -->
+        <div class="report-card" style="max-width: 680px; margin: 12px auto 0;">
+          <div class="report-card-header">
+            <div>
+              <h3 class="report-card-title" style="font-size: 1.15rem;">Sample Report Preview</h3>
+              <p class="report-card-subtitle">Chesapeake Bay · Transect A</p>
+            </div>
+            <span class="report-status">Complete</span>
+          </div>
+          <div class="report-progress-bar" style="background: linear-gradient(90deg, #00A5E0, #00D4AA, #8BC34A); margin: 20px 0 24px;"></div>
+          <div class="report-metrics">
+            <div class="report-metric">
+              <p class="report-metric-label">Total Species</p>
+              <p class="report-metric-value">312</p>
+              <p class="report-metric-note green">Verified</p>
+            </div>
+            <div class="report-metric">
+              <p class="report-metric-label">Invasive Detected</p>
+              <p class="report-metric-value">4</p>
+              <p class="report-metric-note" style="color: #e67e22;">Flagged</p>
+            </div>
+            <div class="report-metric">
+              <p class="report-metric-label">Report Format</p>
+              <p class="report-metric-value">PDF</p>
+              <p class="report-metric-note teal">Ready</p>
+            </div>
           </div>
         </div>
       </section>
